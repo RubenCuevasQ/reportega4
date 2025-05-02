@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,106 +8,86 @@
     <style>
         /* Custom Styles */
         body {
-            font-family: 'Inter', sans-serif;
-            /* Using Inter font as preferred */
+            font-family: 'Inter', sans-serif; /* Using Inter font as preferred */
         }
-
         /* Style for smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
-
         /* Style for sticky sidebar */
         .sticky-sidebar {
             position: sticky;
-            top: 2rem;
-            /* Adjust as needed */
-            height: calc(100vh - 4rem);
-            /* Adjust based on top value */
+            top: 2rem; /* Adjust as needed */
+            height: calc(100vh - 4rem); /* Adjust based on top value */
             overflow-y: auto;
         }
-
-        /* Simple transition for collapsible sections */
+         /* Simple transition for collapsible sections */
         .collapse-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-out;
         }
-
         .collapse-content.open {
-            max-height: 2000px;
-            /* Increased max-height for potentially longer content */
+            max-height: 2000px; /* Increased max-height for potentially longer content */
             transition: max-height 0.7s ease-in;
         }
-
         /* Style for active nav link - Now uses the brand color */
         .nav-link.active {
             font-weight: bold;
-            color: #80c431;
-            /* MW Green */
-            background-color: #80c4311a;
-            /* Lighter MW Green for background */
+            color: #80c431; /* MW Green */
+            background-color: #80c4311a; /* Lighter MW Green for background */
         }
-
         /* Custom scrollbar for sidebar (optional) */
         .sticky-sidebar::-webkit-scrollbar {
             width: 6px;
         }
-
         .sticky-sidebar::-webkit-scrollbar-track {
             background: #f1f1f1;
             border-radius: 10px;
         }
-
         .sticky-sidebar::-webkit-scrollbar-thumb {
             background: #888;
             border-radius: 10px;
         }
-
         .sticky-sidebar::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
-
         /* Add some spacing for code blocks */
         pre {
-            background-color: #f3f4f6;
-            /* gray-100 */
+            background-color: #f3f4f6; /* gray-100 */
             padding: 1rem;
-            border-radius: 0.375rem;
-            /* rounded-md */
+            border-radius: 0.375rem; /* rounded-md */
             overflow-x: auto;
             margin-top: 0.5rem;
             margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-            /* text-sm */
+            font-size: 0.875rem; /* text-sm */
         }
-
         code {
-            font-family: 'Courier New', Courier, monospace;
+           font-family: 'Courier New', Courier, monospace;
         }
-
         /* Ensure scroll-margin-top works */
         section[id] {
-            scroll-margin-top: 4rem;
-            /* Adjust based on potential fixed headers or sticky elements */
+            scroll-margin-top: 4rem; /* Adjust based on potential fixed headers or sticky elements */
+        }
+        /* Custom color for the header background */
+        .bg-mw-dark-green {
+             background-color: #001720;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body class="bg-gray-100 text-gray-800">
 
     <div class="container mx-auto p-4 lg:p-8">
-        <header class="mb-8 p-6 bg-white rounded-lg shadow-md flex items-center justify-between">
+        <header class="mb-8 p-6 bg-mw-dark-green rounded-lg shadow-md flex items-center justify-between">
             <div>
-                <h1 class="text-2xl lg:text-3xl font-bold text-[#80c431]">Reporte Interactivo: Google Analytics 4</h1>
-                <p class="text-sm text-gray-500">Preparado por: Mentalidad Web Chile | Fecha: 2 de Mayo de 2025</p>
+                <h1 class="text-2xl lg:text-3xl font-bold text-white">Reporte Interactivo: Google Analytics 4</h1>
+                <p class="text-sm text-gray-300">Preparado por: Mentalidad Web Chile | Fecha: 2 de Mayo de 2025</p>
             </div>
             <div class="text-right">
-                <img src="https://www.mentalidadweb.com/wp-content/uploads/2022/02/logomw.svg"
-                    alt="Logo Mentalidad Web Chile" class="h-10 sm:h-12">
+                 <img src="https://www.mentalidadweb.com/wp-content/uploads/2022/02/logomw.svg" alt="Logo Mentalidad Web Chile" class="h-10 sm:h-12">
             </div>
         </header>
 
@@ -117,106 +96,81 @@
                 <nav id="sidebar-nav" class="p-4 bg-white rounded-lg shadow-md lg:sticky-sidebar">
                     <h2 class="text-lg font-semibold mb-4 text-gray-700">Navegación</h2>
                     <ul class="space-y-2">
-                        <li><a href="#seccion1"
-                                class="nav-link block py-1 px-2 text-gray-600 hover:bg-[#80c431]/10 hover:text-[#80c431] rounded">1.
-                                Evolución de GA</a></li>
-                        <li><a href="#seccion2"
-                                class="nav-link block py-1 px-2 text-gray-600 hover:bg-[#80c431]/10 hover:text-[#80c431] rounded">2.
-                                Cambios Técnicos GA4 vs UA</a></li>
-                        <li><a href="#seccion3"
-                                class="nav-link block py-1 px-2 text-gray-600 hover:bg-[#80c431]/10 hover:text-[#80c431] rounded">3.
-                                Resumen Buenas Prácticas</a></li>
-                        <li><a href="#seccion4"
-                                class="nav-link block py-1 px-2 text-gray-600 hover:bg-[#80c431]/10 hover:text-[#80c431] rounded">4.
-                                Detalle Buenas Prácticas (GTM)</a></li>
+                        <li><a href="#seccion1" class="nav-link block py-1 px-2 text-gray-600 hover:bg-[#80c431]/10 hover:text-[#80c431] rounded">1. Evolución de GA</a></li>
+                        <li><a href="#seccion2" class="nav-link block py-1 px-2 text-gray-600 hover:bg-[#80c431]/10 hover:text-[#80c431] rounded">2. Cambios Técnicos GA4 vs UA</a></li>
+                        <li><a href="#seccion3" class="nav-link block py-1 px-2 text-gray-600 hover:bg-[#80c431]/10 hover:text-[#80c431] rounded">3. Resumen Buenas Prácticas</a></li>
+                        <li><a href="#seccion4" class="nav-link block py-1 px-2 text-gray-600 hover:bg-[#80c431]/10 hover:text-[#80c431] rounded">4. Detalle Buenas Prácticas (GTM)</a></li>
                     </ul>
                 </nav>
             </aside>
 
             <main class="w-full lg:w-3/4">
                 <section id="seccion1" class="mb-8 p-6 bg-white rounded-lg shadow-md">
-                    <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-[#80c431]">1. Línea de Tiempo de la
-                        Evolución de Google Analytics</h2>
+                     <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-[#80c431]">1. Línea de Tiempo de la Evolución de Google Analytics</h2>
                     <div class="space-y-4">
                         <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Urchin from Google (Adquirido en 2005)</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white">
                                 <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Origen: Desarrollado por Quantified Systems (desde 1998), adquirido por Google
-                                        (2005).</li>
+                                    <li>Origen: Desarrollado por Quantified Systems (desde 1998), adquirido por Google (2005).</li>
                                     <li>Tecnología: Biblioteca Javascript <code>urchin.js</code>.</li>
                                     <li>Enfoque: Análisis web basado en registros internos del servidor.</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Classic Google Analytics (2007-2009)</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white">
                                 <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Versiones: Synchronous (2007) y Asynchronous (2009).</li>
-                                    <li>Tecnología: Biblioteca Javascript <code>ga.js</code>.</li>
-                                    <li>Avances: Introducción del seguimiento de e-commerce, mejora en recolección y
-                                        precisión de datos.</li>
+                                     <li>Versiones: Synchronous (2007) y Asynchronous (2009).</li>
+                                     <li>Tecnología: Biblioteca Javascript <code>ga.js</code>.</li>
+                                     <li>Avances: Introducción del seguimiento de e-commerce, mejora en recolección y precisión de datos.</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Universal Analytics (UA) (Lanzado en 2012)</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white">
                                 <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Contexto: Medición web centrada en escritorio, sesiones independientes y
-                                        cookies.</li>
-                                    <li>Tecnología: Biblioteca Javascript <code>analytics.js</code>.</li>
-                                    <li>Capacidades: Comprensión del usuario multidispositivo, rendimiento de apps
-                                        móviles, generación de leads y ROI.</li>
+                                     <li>Contexto: Medición web centrada en escritorio, sesiones independientes y cookies.</li>
+                                     <li>Tecnología: Biblioteca Javascript <code>analytics.js</code>.</li>
+                                     <li>Capacidades: Comprensión del usuario multidispositivo, rendimiento de apps móviles, generación de leads y ROI.</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Google Analytics 4 (GA4) (Anunciado en Octubre 2020)</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white">
                                 <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Rol: Sucesor de Universal Analytics.</li>
-                                    <li>Tecnología: Biblioteca Javascript <code>gtm.js</code> (generalmente vía Google
-                                        Tag Manager).</li>
-                                    <li>Paradigma: Foco en el comportamiento del usuario y modelo basado en eventos.
-                                    </li>
-                                    <li>Características Clave: Multiplataforma, opera sin dependencia exclusiva de
-                                        cookies, privacidad central, medición entre dispositivos.</li>
+                                     <li>Rol: Sucesor de Universal Analytics.</li>
+                                     <li>Tecnología: Biblioteca Javascript <code>gtm.js</code> (generalmente vía Google Tag Manager).</li>
+                                     <li>Paradigma: Foco en el comportamiento del usuario y modelo basado en eventos.</li>
+                                     <li>Características Clave: Multiplataforma, opera sin dependencia exclusiva de cookies, privacidad central, medición entre dispositivos.</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Transición Obligatoria a GA4 (Completada en 2023)</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white">
                                 <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Cese de UA: Propiedades estándar dejaron de procesar datos el 1 de julio de
-                                        2023.</li>
-                                    <li>Cese de UA 360: Propiedades 360 dejaron de procesar datos el 1 de octubre de
-                                        2023.</li>
-                                    <li>Impacto: La migración a GA4 se volvió esencial para la continuidad de la
-                                        recolección de datos. El acceso a datos históricos de UA finalizó
-                                        aproximadamente 6 meses después del cese.</li>
+                                     <li>Cese de UA: Propiedades estándar dejaron de procesar datos el 1 de julio de 2023.</li>
+                                     <li>Cese de UA 360: Propiedades 360 dejaron de procesar datos el 1 de octubre de 2023.</li>
+                                     <li>Impacto: La migración a GA4 se volvió esencial para la continuidad de la recolección de datos. El acceso a datos históricos de UA finalizó aproximadamente 6 meses después del cese.</li>
                                 </ul>
                             </div>
                         </div>
@@ -224,127 +178,90 @@
                 </section>
 
                 <section id="seccion2" class="mb-8 p-6 bg-white rounded-lg shadow-md">
-                    <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-[#80c431]">2. Documentación Técnica:
-                        Cambios Profundos GA4 vs. Universal Analytics</h2>
-                    <div class="space-y-4">
+                     <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-[#80c431]">2. Documentación Técnica: Cambios Profundos GA4 vs. Universal Analytics</h2>
+                     <div class="space-y-4">
                         <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Modelo de Datos: 100% Basado en Eventos</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white text-sm text-gray-700 space-y-1">
-                                <p><strong>Diferencia Central:</strong> GA4 mide <em>toda</em> interacción como un
-                                    evento, a diferencia de UA que distinguía entre páginas vistas, eventos,
-                                    transacciones, etc. (hits).</p>
-                                <p><strong>Implicación:</strong> Requiere un cambio de mentalidad; la configuración es
-                                    más deliberada y técnica, ya que menos métricas se registran "automáticamente"
-                                    comparado con UA.</p>
+                                <p><strong>Diferencia Central:</strong> GA4 mide <em>toda</em> interacción como un evento, a diferencia de UA que distinguía entre páginas vistas, eventos, transacciones, etc. (hits).</p>
+                                <p><strong>Implicación:</strong> Requiere un cambio de mentalidad; la configuración es más deliberada y técnica, ya que menos métricas se registran "automáticamente" comparado con UA.</p>
                             </div>
                         </div>
                         <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Jerarquía de Cuenta: Flujos de Datos vs. Vistas</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white text-sm text-gray-700 space-y-1">
-                                <p><strong>Estructura UA:</strong> Cuentas > Propiedades > Vistas (una fuente de datos
-                                    por propiedad, vistas para filtrar).</p>
-                                <p><strong>Estructura GA4:</strong> Cuentas > Propiedades > Flujos de Datos (Web, iOS,
-                                    Android). Permite consolidar datos de múltiples plataformas (web + app) en una
-                                    propiedad.</p>
-                                <p><strong>Función:</strong> Los flujos actúan como fuentes de datos; no replican la
-                                    función de filtrado de las vistas de UA (el filtrado se maneja de otras formas en
-                                    GA4). Ideal para visión omnicanal.</p>
+                                <p><strong>Estructura UA:</strong> Cuentas > Propiedades > Vistas (una fuente de datos por propiedad, vistas para filtrar).</p>
+                                <p><strong>Estructura GA4:</strong> Cuentas > Propiedades > Flujos de Datos (Web, iOS, Android). Permite consolidar datos de múltiples plataformas (web + app) en una propiedad.</p>
+                                <p><strong>Función:</strong> Los flujos actúan como fuentes de datos; no replican la función de filtrado de las vistas de UA (el filtrado se maneja de otras formas en GA4). Ideal para visión omnicanal.</p>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Informes y Análisis: Flexibilidad y Exportación</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white text-sm text-gray-700 space-y-1">
-                                <p><strong>Informes Estándar:</strong> Menor cantidad de informes predefinidos en GA4
-                                    comparado con UA.</p>
-                                <p><strong>Análisis Avanzado:</strong> GA4 está diseñado para análisis más profundos
-                                    fuera de la interfaz principal, utilizando:</p>
+                                <p><strong>Informes Estándar:</strong> Menor cantidad de informes predefinidos en GA4 comparado con UA.</p>
+                                <p><strong>Análisis Avanzado:</strong> GA4 está diseñado para análisis más profundos fuera de la interfaz principal, utilizando:</p>
                                 <ul class="list-disc list-inside ml-4">
-                                    <li><strong>Exploraciones:</strong> Herramienta potente y flexible dentro de GA4
-                                        para informes personalizados, análisis de embudos, rutas de usuario, etc.</li>
-                                    <li><strong>Exportación a BigQuery:</strong> Gratuita para todas las propiedades
-                                        (con límites). Exportación diaria con SLA para propiedades 360.</li>
-                                    <li><strong>Looker Studio:</strong> Para visualización de datos (considerar cuotas
-                                        API).</li>
+                                     <li><strong>Exploraciones:</strong> Herramienta potente y flexible dentro de GA4 para informes personalizados, análisis de embudos, rutas de usuario, etc.</li>
+                                     <li><strong>Exportación a BigQuery:</strong> Gratuita para todas las propiedades (con límites). Exportación diaria con SLA para propiedades 360.</li>
+                                     <li><strong>Looker Studio:</strong> Para visualización de datos (considerar cuotas API).</li>
                                 </ul>
-                                <p><strong>Métricas de Sesión Recuperadas:</strong> Se reincorporaron métricas como
-                                    "Duración media de la sesión" y "Vistas por sesión".</p>
-                                <p><strong>Interfaz:</strong> La sección "Configurar" se movió al área de "Administrar".
-                                </p>
+                                <p><strong>Métricas de Sesión Recuperadas:</strong> Se reincorporaron métricas como "Duración media de la sesión" y "Vistas por sesión".</p>
+                                <p><strong>Interfaz:</strong> La sección "Configurar" se movió al área de "Administrar".</p>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Seguimiento de Eventos y Conversiones</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white text-sm text-gray-700 space-y-1">
-                                <p><strong>Tipos de Eventos:</strong> Automáticos, de medición mejorada, recomendados y
-                                    personalizados.</p>
-                                <p><strong>Configuración Flexible:</strong> Eventos personalizados creables desde la
-                                    interfaz de GA4 (además de GTM).</p>
-                                <p><strong>Visibilidad del Recorrido:</strong> Capacidad mejorada para analizar el
-                                    camino completo del usuario hacia la conversión.</p>
-                                <p><strong>Atribución Avanzada:</strong> Modelos más sofisticados, incluyendo Atribución
-                                    Basada en Datos (DDA).</p>
+                                <p><strong>Tipos de Eventos:</strong> Automáticos, de medición mejorada, recomendados y personalizados.</p>
+                                <p><strong>Configuración Flexible:</strong> Eventos personalizados creables desde la interfaz de GA4 (además de GTM).</p>
+                                <p><strong>Visibilidad del Recorrido:</strong> Capacidad mejorada para analizar el camino completo del usuario hacia la conversión.</p>
+                                <p><strong>Atribución Avanzada:</strong> Modelos más sofisticados, incluyendo Atribución Basada en Datos (DDA).</p>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Enfoque Primordial en la Privacidad</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white text-sm text-gray-700 space-y-1">
-                                <p><strong>Diseño Consciente:</strong> Construido considerando la privacidad desde el
-                                    inicio.</p>
-                                <p><strong>Controles de Datos:</strong> Opciones más granulares para la gestión de
-                                    datos.</p>
+                                <p><strong>Diseño Consciente:</strong> Construido considerando la privacidad desde el inicio.</p>
+                                <p><strong>Controles de Datos:</strong> Opciones más granulares para la gestión de datos.</p>
                                 <p><strong>Sin Almacenamiento de IP:</strong> Las direcciones IP ya no se almacenan.</p>
-                                <p><strong>Seguimiento sin Cookies:</strong> Capacidades para operar en entornos sin
-                                    cookies de terceros.</p>
+                                <p><strong>Seguimiento sin Cookies:</strong> Capacidades para operar en entornos sin cookies de terceros.</p>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Capacidades Predictivas e IA</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white text-sm text-gray-700 space-y-1">
-                                <p><strong>Machine Learning Integrado:</strong> Utiliza IA de Google para generar
-                                    audiencias y métricas predictivas (ej: probabilidad de compra).</p>
-                                <p><strong>Aplicaciones:</strong> Útil para planificación estratégica, personalización y
-                                    segmentación avanzada.</p>
+                                <p><strong>Machine Learning Integrado:</strong> Utiliza IA de Google para generar audiencias y métricas predictivas (ej: probabilidad de compra).</p>
+                                <p><strong>Aplicaciones:</strong> Útil para planificación estratégica, personalización y segmentación avanzada.</p>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
                                 <span>Integraciones Nativas y Ampliadas</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-3 border-t bg-white text-sm text-gray-700 space-y-1">
-                                <p><strong>Ecosistema Google:</strong> Conexiones fluidas con Google Ads, Search
-                                    Console, YouTube, Merchant Center, etc.</p>
-                                <p><strong>Google Ads:</strong> Uso de audiencias de GA4, importación de conversiones,
-                                    análisis de costos/rendimiento.</p>
-                                <p><strong>Plataformas Publicitarias:</strong> Integración con Search Ads 360 y Display
-                                    & Video 360.</p>
-                                <p><strong>Importación de Datos:</strong> Capacidad para importar datos externos (CRM,
-                                    costos, metadatos).</p>
+                                <p><strong>Ecosistema Google:</strong> Conexiones fluidas con Google Ads, Search Console, YouTube, Merchant Center, etc.</p>
+                                <p><strong>Google Ads:</strong> Uso de audiencias de GA4, importación de conversiones, análisis de costos/rendimiento.</p>
+                                <p><strong>Plataformas Publicitarias:</strong> Integración con Search Ads 360 y Display & Video 360.</p>
+                                <p><strong>Importación de Datos:</strong> Capacidad para importar datos externos (CRM, costos, metadatos).</p>
                                 <p><strong>BigQuery:</strong> Exportación nativa y gratuita (con límites).</p>
                             </div>
                         </div>
@@ -352,11 +269,8 @@
                 </section>
 
                 <section id="seccion3" class="mb-8 p-6 bg-white rounded-lg shadow-md">
-                    <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-[#80c431]">3. Resumen de Tips y Buenas
-                        Prácticas para GA4</h2>
-                    <p class="text-gray-600 mb-4">Esta sección resume los puntos clave para optimizar el uso de Google
-                        Analytics 4. La siguiente sección profundiza en los detalles técnicos, especialmente en la
-                        implementación con Google Tag Manager.</p>
+                     <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-[#80c431]">3. Resumen de Tips y Buenas Prácticas para GA4</h2>
+                    <p class="text-gray-600 mb-4">Esta sección resume los puntos clave para optimizar el uso de Google Analytics 4. La siguiente sección profundiza en los detalles técnicos, especialmente en la implementación con Google Tag Manager.</p>
                     <ol class="list-decimal list-inside space-y-2 text-sm text-gray-700">
                         <li>Optimiza tu Configuración de GA4.</li>
                         <li>Domina el Modelo de Eventos.</li>
@@ -376,39 +290,23 @@
                 </section>
 
                 <section id="seccion4" class="mb-8 p-6 bg-white rounded-lg shadow-md">
-                    <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-[#80c431]">4. Detalle de Buenas Prácticas
-                        Técnicas GA4 con Google Tag Manager (GTM)</h2>
-                    <p class="text-gray-600 mb-6">Google Tag Manager es la herramienta recomendada para implementar y
-                        gestionar GA4. Aquí detallamos las prácticas técnicas esenciales:</p>
+                     <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-[#80c431]">4. Detalle de Buenas Prácticas Técnicas GA4 con Google Tag Manager (GTM)</h2>
+                    <p class="text-gray-600 mb-6">Google Tag Manager es la herramienta recomendada para implementar y gestionar GA4. Aquí detallamos las prácticas técnicas esenciales:</p>
 
                     <div class="space-y-6">
                         <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
-                                <span>4.1. Implementación Robusta del Data Layer</span>
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]"> <span>4.1. Implementación Robusta del Data Layer</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p>El Data Layer es la base de una implementación GTM/GA4 sólida. Permite desacoplar la
-                                    recolección de datos del código fuente del sitio.</p>
+                                <p>El Data Layer es la base de una implementación GTM/GA4 sólida. Permite desacoplar la recolección de datos del código fuente del sitio.</p>
                                 <p><strong>Buenas Prácticas:</strong></p>
                                 <ul class="list-disc list-inside ml-4 space-y-1">
-                                    <li><strong>Estandarización:</strong> Define una estructura clara y consistente para
-                                        tus `dataLayer.push()`. Utiliza nombres descriptivos y sigue una convención (ej.
-                                        `snake_case` o `camelCase`).</li>
-                                    <li><strong>Información Relevante:</strong> Incluye toda la información necesaria
-                                        para tus eventos GA4 directamente en el `dataLayer.push` que dispara el evento
-                                        (ej., detalles del producto en un `add_to_cart`).</li>
-                                    <li><strong>Eventos Personalizados:</strong> Usa la clave `event` en tus
-                                        `dataLayer.push` para disparar etiquetas en GTM basadas en acciones específicas
-                                        (ej. `event: 'form_submission_success'`).</li>
-                                    <li><strong>Colaboración con Desarrollo:</strong> Trabaja estrechamente con los
-                                        desarrolladores para asegurar que el Data Layer se implemente correctamente en
-                                        todas las interacciones clave del sitio/app.</li>
-                                    <li><strong>Evita Acceder al DOM Directamente:</strong> Siempre que sea posible,
-                                        obtén la información del Data Layer en lugar de extraerla del HTML usando
-                                        selectores CSS o JS en GTM, ya que esto es más propenso a romperse con cambios
-                                        en el diseño.</li>
+                                    <li><strong>Estandarización:</strong> Define una estructura clara y consistente para tus `dataLayer.push()`. Utiliza nombres descriptivos y sigue una convención (ej. `snake_case` o `camelCase`).</li>
+                                    <li><strong>Información Relevante:</strong> Incluye toda la información necesaria para tus eventos GA4 directamente en el `dataLayer.push` que dispara el evento (ej., detalles del producto en un `add_to_cart`).</li>
+                                    <li><strong>Eventos Personalizados:</strong> Usa la clave `event` en tus `dataLayer.push` para disparar etiquetas en GTM basadas en acciones específicas (ej. `event: 'form_submission_success'`).</li>
+                                    <li><strong>Colaboración con Desarrollo:</strong> Trabaja estrechamente con los desarrolladores para asegurar que el Data Layer se implemente correctamente en todas las interacciones clave del sitio/app.</li>
+                                    <li><strong>Evita Acceder al DOM Directamente:</strong> Siempre que sea posible, obtén la información del Data Layer en lugar de extraerla del HTML usando selectores CSS o JS en GTM, ya que esto es más propenso a romperse con cambios en el diseño.</li>
                                 </ul>
                                 <p><strong>Ejemplo de `dataLayer.push` para un evento `add_to_cart`:</strong></p>
                                 <pre><code class="language-javascript">window.dataLayer = window.dataLayer || [];
@@ -432,216 +330,124 @@ window.dataLayer.push({
                         </div>
 
                         <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
+                             <button class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
                                 <span>4.2. Uso Eficiente de Variables en GTM</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p>Las variables de GTM son esenciales para capturar y reutilizar información dinámica.
-                                </p>
+                                <p>Las variables de GTM son esenciales para capturar y reutilizar información dinámica.</p>
                                 <ul class="list-disc list-inside ml-4 space-y-1">
-                                    <li><strong>Variables de Capa de Datos (Data Layer Variables):</strong> La forma
-                                        principal de capturar información empujada al Data Layer. Asegúrate de que el
-                                        nombre de la variable en GTM coincida exactamente con la clave en el Data Layer.
-                                    </li>
-                                    <li><strong>Variables Integradas (Built-in):</strong> Activa las variables
-                                        integradas relevantes (Click Classes, Click ID, Form ID, Page URL, etc.) para
-                                        capturar información común sin necesidad de Data Layer.</li>
-                                    <li><strong>Variables Personalizadas (Custom JavaScript, Lookup Tables,
-                                            etc.):</strong> Útiles para transformar datos, combinar información o crear
-                                        lógica compleja. Úsalas con moderación para mantener la simplicidad.</li>
-                                    <li><strong>Variable de Configuración GA4:</strong> Centraliza tu Measurement ID y
-                                        otras configuraciones comunes (como `server_container_url` para SST o campos a
-                                        configurar) en una única variable de tipo "Google Tag: Configuration Tag".
-                                        Reutilízala en todas tus etiquetas de evento GA4.</li>
-                                    <li><strong>Nomenclatura Clara:</strong> Usa nombres descriptivos para tus variables
-                                        (ej. `DLV - ecommerce.value`, `CJS - Formatted Timestamp`).</li>
+                                    <li><strong>Variables de Capa de Datos (Data Layer Variables):</strong> La forma principal de capturar información empujada al Data Layer. Asegúrate de que el nombre de la variable en GTM coincida exactamente con la clave en el Data Layer.</li>
+                                    <li><strong>Variables Integradas (Built-in):</strong> Activa las variables integradas relevantes (Click Classes, Click ID, Form ID, Page URL, etc.) para capturar información común sin necesidad de Data Layer.</li>
+                                    <li><strong>Variables Personalizadas (Custom JavaScript, Lookup Tables, etc.):</strong> Útiles para transformar datos, combinar información o crear lógica compleja. Úsalas con moderación para mantener la simplicidad.</li>
+                                    <li><strong>Variable de Configuración GA4:</strong> Centraliza tu Measurement ID y otras configuraciones comunes (como `server_container_url` para SST o campos a configurar) en una única variable de tipo "Google Tag: Configuration Tag". Reutilízala en todas tus etiquetas de evento GA4.</li>
+                                    <li><strong>Nomenclatura Clara:</strong> Usa nombres descriptivos para tus variables (ej. `DLV - ecommerce.value`, `CJS - Formatted Timestamp`).</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                             <button class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
                                 <span>4.3. Configuración Precisa de Etiquetas de Evento GA4</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p>La etiqueta "Google Analytics: Evento de GA4" es tu principal herramienta para enviar
-                                    datos.</p>
+                                <p>La etiqueta "Google Analytics: Evento de GA4" es tu principal herramienta para enviar datos.</p>
                                 <ul class="list-disc list-inside ml-4 space-y-1">
-                                    <li><strong>Etiqueta de Configuración:</strong> Asegúrate de que cada etiqueta de
-                                        evento GA4 esté vinculada a tu Variable de Configuración GA4 creada previamente.
-                                    </li>
-                                    <li><strong>Nombre del Evento:</strong> Usa los nombres de eventos recomendados por
-                                        Google siempre que sea posible (`add_to_cart`, `purchase`, `sign_up`, `login`,
-                                        `generate_lead`, etc.). Para eventos no cubiertos, usa nombres descriptivos y
-                                        consistentes (`snake_case` es común).</li>
-                                    <li><strong>Parámetros del Evento:</strong> Envía parámetros relevantes para dar
-                                        contexto al evento. Utiliza los nombres de parámetros recomendados cuando
-                                        aplique (ej. `currency`, `value`, `items` para e-commerce). Para parámetros
-                                        personalizados, regístralos como dimensiones/métricas personalizadas en la
-                                        interfaz de GA4.</li>
-                                    <li><strong>Parámetros de E-commerce:</strong> Para eventos de e-commerce,
-                                        estructura los datos según el esquema definido por Google (usando el objeto
-                                        `ecommerce` en el Data Layer y variables GTM correspondientes).</li>
-                                    <li><strong>Propiedades de Usuario:</strong> Envía propiedades de usuario (ej.
-                                        `user_status: 'logged_in'`, `membership_level: 'gold'`) para segmentar usuarios.
-                                        Regístralas en GA4. Ten cuidado de no enviar PII (Información Personal
-                                        Identificable).</li>
+                                    <li><strong>Etiqueta de Configuración:</strong> Asegúrate de que cada etiqueta de evento GA4 esté vinculada a tu Variable de Configuración GA4 creada previamente.</li>
+                                    <li><strong>Nombre del Evento:</strong> Usa los nombres de eventos recomendados por Google siempre que sea posible (`add_to_cart`, `purchase`, `sign_up`, `login`, `generate_lead`, etc.). Para eventos no cubiertos, usa nombres descriptivos y consistentes (`snake_case` es común).</li>
+                                    <li><strong>Parámetros del Evento:</strong> Envía parámetros relevantes para dar contexto al evento. Utiliza los nombres de parámetros recomendados cuando aplique (ej. `currency`, `value`, `items` para e-commerce). Para parámetros personalizados, regístralos como dimensiones/métricas personalizadas en la interfaz de GA4.</li>
+                                    <li><strong>Parámetros de E-commerce:</strong> Para eventos de e-commerce, estructura los datos según el esquema definido por Google (usando el objeto `ecommerce` en el Data Layer y variables GTM correspondientes).</li>
+                                    <li><strong>Propiedades de Usuario:</strong> Envía propiedades de usuario (ej. `user_status: 'logged_in'`, `membership_level: 'gold'`) para segmentar usuarios. Regístralas en GA4. Ten cuidado de no enviar PII (Información Personal Identificable).</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                             <button class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
                                 <span>4.4. Activadores (Triggers) Específicos y Eficientes</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
                                 <p>Los activadores determinan cuándo se disparan tus etiquetas.</p>
                                 <ul class="list-disc list-inside ml-4 space-y-1">
-                                    <li><strong>Eventos Personalizados:</strong> El método más robusto. Dispara tus
-                                        etiquetas GA4 usando activadores de "Evento Personalizado" basados en la clave
-                                        `event` de tus `dataLayer.push`.</li>
-                                    <li><strong>Activadores de Interacción (Clics, Formularios):</strong> Útiles si no
-                                        puedes implementar Data Layer para todo. Sé lo más específico posible usando
-                                        Clases, IDs u otros atributos únicos para evitar disparar etiquetas en elementos
-                                        incorrectos.</li>
-                                    <li><strong>Activadores de Visibilidad de Elemento:</strong> Buenos para medir
-                                        impresiones de banners o si un usuario ha visto una sección específica.</li>
-                                    <li><strong>Activadores de Profundidad de Scroll:</strong> Para medir el engagement
-                                        con el contenido.</li>
-                                    <li><strong>Condiciones Precisas:</strong> Añade condiciones a tus activadores (ej.
-                                        `Page Path contains /checkout`) para asegurarte de que solo se disparen en las
-                                        páginas o contextos correctos.</li>
-                                    <li><strong>Grupos de Activadores:</strong> Útiles para combinar múltiples
-                                        condiciones (ej. Clic en botón Y en página específica).</li>
+                                    <li><strong>Eventos Personalizados:</strong> El método más robusto. Dispara tus etiquetas GA4 usando activadores de "Evento Personalizado" basados en la clave `event` de tus `dataLayer.push`.</li>
+                                    <li><strong>Activadores de Interacción (Clics, Formularios):</strong> Útiles si no puedes implementar Data Layer para todo. Sé lo más específico posible usando Clases, IDs u otros atributos únicos para evitar disparar etiquetas en elementos incorrectos.</li>
+                                    <li><strong>Activadores de Visibilidad de Elemento:</strong> Buenos para medir impresiones de banners o si un usuario ha visto una sección específica.</li>
+                                    <li><strong>Activadores de Profundidad de Scroll:</strong> Para medir el engagement con el contenido.</li>
+                                    <li><strong>Condiciones Precisas:</strong> Añade condiciones a tus activadores (ej. `Page Path contains /checkout`) para asegurarte de que solo se disparen en las páginas o contextos correctos.</li>
+                                    <li><strong>Grupos de Activadores:</strong> Útiles para combinar múltiples condiciones (ej. Clic en botón Y en página específica).</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                             <button class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
                                 <span>4.5. Debugging y Validación Rigurosa</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
                                 <p>La validación es crucial antes de publicar cualquier cambio.</p>
                                 <ul class="list-disc list-inside ml-4 space-y-1">
-                                    <li><strong>Modo de Vista Previa (Preview Mode) de GTM:</strong> Tu herramienta
-                                        principal. Verifica qué etiquetas se disparan, cuándo, y qué datos contienen.
-                                        Examina el Data Layer y los valores de las variables en cada paso.</li>
-                                    <li><strong>Google Analytics DebugView:</strong> En la interfaz de GA4 (Administrar
-                                        > DebugView), observa los eventos y parámetros que llegan en tiempo real desde
-                                        tu navegador (cuando tienes habilitada la extensión "Google Analytics Debugger"
-                                        o estás en modo Preview de GTM).</li>
-                                    <li><strong>Extensión Tag Assistant Companion:</strong> Ayuda a conectar tu sitio
-                                        con el modo Preview de GTM, especialmente en casos complejos (iframes,
-                                        redirecciones).</li>
-                                    <li><strong>Consola del Navegador:</strong> Revisa si hay errores de JavaScript que
-                                        puedan estar interfiriendo con GTM o el Data Layer.</li>
-                                    <li><strong>Pruebas Exhaustivas:</strong> Prueba todos los escenarios posibles
-                                        (diferentes dispositivos, navegadores, flujos de usuario) antes de publicar.
-                                    </li>
+                                    <li><strong>Modo de Vista Previa (Preview Mode) de GTM:</strong> Tu herramienta principal. Verifica qué etiquetas se disparan, cuándo, y qué datos contienen. Examina el Data Layer y los valores de las variables en cada paso.</li>
+                                    <li><strong>Google Analytics DebugView:</strong> En la interfaz de GA4 (Administrar > DebugView), observa los eventos y parámetros que llegan en tiempo real desde tu navegador (cuando tienes habilitada la extensión "Google Analytics Debugger" o estás en modo Preview de GTM).</li>
+                                    <li><strong>Extensión Tag Assistant Companion:</strong> Ayuda a conectar tu sitio con el modo Preview de GTM, especialmente en casos complejos (iframes, redirecciones).</li>
+                                    <li><strong>Consola del Navegador:</strong> Revisa si hay errores de JavaScript que puedan estar interfiriendo con GTM o el Data Layer.</li>
+                                    <li><strong>Pruebas Exhaustivas:</strong> Prueba todos los escenarios posibles (diferentes dispositivos, navegadores, flujos de usuario) antes de publicar.</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
                                 <span>4.6. Implementación de Consent Mode v2</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p>Esencial para cumplir con regulaciones de privacidad (como GDPR) y habilitar la
-                                    modelación de conversiones y comportamiento para usuarios que no dan consentimiento.
-                                </p>
+                                <p>Esencial para cumplir con regulaciones de privacidad (como GDPR) y habilitar la modelación de conversiones y comportamiento para usuarios que no dan consentimiento.</p>
                                 <ul class="list-disc list-inside ml-4 space-y-1">
-                                    <li><strong>Plataforma de Gestión de Consentimiento (CMP):</strong> Utiliza una CMP
-                                        certificada por Google (como Cookiebot, OneTrust, Usercentrics) que se integre
-                                        con GTM y Consent Mode.</li>
-                                    <li><strong>Configuración en GTM:</strong> Habilita la "Descripción general del
-                                        consentimiento" en la configuración del contenedor GTM.</li>
-                                    <li><strong>Comandos `gtag('consent', ...)`:</strong> La CMP debe enviar los
-                                        comandos `default` (estado inicial antes de que el usuario interactúe) y
-                                        `update` (después de que el usuario da/deniega consentimiento) antes de que se
-                                        disparen las etiquetas de Google (GA4, Ads).</li>
-                                    <li><strong>Comprobaciones de Consentimiento en Etiquetas:</strong> Asegúrate de que
-                                        las etiquetas de Google (y otras que requieran consentimiento) tengan las
-                                        comprobaciones de consentimiento adecuadas configuradas en GTM (generalmente "No
-                                        additional consent required" si la CMP maneja los comandos `gtag`).</li>
-                                    <li><strong>Verificación:</strong> Usa el modo Preview de GTM (pestaña Consent) y
-                                        DebugView para verificar que los estados de consentimiento (`ad_storage`,
-                                        `analytics_storage`, `ad_user_data`, `ad_personalization`) se actualizan
-                                        correctamente y que los pings de GA4 se modifican según el consentimiento
-                                        (parámetro `gcs`).</li>
+                                    <li><strong>Plataforma de Gestión de Consentimiento (CMP):</strong> Utiliza una CMP certificada por Google (como Cookiebot, OneTrust, Usercentrics) que se integre con GTM y Consent Mode.</li>
+                                    <li><strong>Configuración en GTM:</strong> Habilita la "Descripción general del consentimiento" en la configuración del contenedor GTM.</li>
+                                    <li><strong>Comandos `gtag('consent', ...)`:</strong> La CMP debe enviar los comandos `default` (estado inicial antes de que el usuario interactúe) y `update` (después de que el usuario da/deniega consentimiento) antes de que se disparen las etiquetas de Google (GA4, Ads).</li>
+                                    <li><strong>Comprobaciones de Consentimiento en Etiquetas:</strong> Asegúrate de que las etiquetas de Google (y otras que requieran consentimiento) tengan las comprobaciones de consentimiento adecuadas configuradas en GTM (generalmente "No additional consent required" si la CMP maneja los comandos `gtag`).</li>
+                                    <li><strong>Verificación:</strong> Usa el modo Preview de GTM (pestaña Consent) y DebugView para verificar que los estados de consentimiento (`ad_storage`, `analytics_storage`, `ad_user_data`, `ad_personalization`) se actualizan correctamente y que los pings de GA4 se modifican según el consentimiento (parámetro `gcs`).</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                             <button class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
                                 <span>4.7. Consideraciones sobre Server-Side Tagging (SST)</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p>GTM Server-Side ofrece mayor control, seguridad y rendimiento, además de mitigar el
-                                    impacto de ITP/ETP y Ad Blockers.</p>
+                                <p>GTM Server-Side ofrece mayor control, seguridad y rendimiento, además de mitigar el impacto de ITP/ETP y Ad Blockers.</p>
                                 <ul class="list-disc list-inside ml-4 space-y-1">
-                                    <li><strong>Infraestructura:</strong> Requiere configurar un entorno de servidor
-                                        (ej. Google Cloud Run - App Engine ya no es la opción preferida para nuevos
-                                        despliegues).</li>
-                                    <li><strong>Flujo de Datos:</strong> El GTM web envía los datos a tu contenedor de
-                                        GTM Server (usando la etiqueta GA4 o Data Tag/Client). El contenedor Server
-                                        procesa los datos y los reenvía a los endpoints finales (GA4, Facebook CAPI,
-                                        etc.).</li>
-                                    <li><strong>Configuración GA4 Web:</strong> En la Variable de Configuración GA4 del
-                                        GTM web, activa "Send to server container" y especifica la URL de tu servidor de
-                                        etiquetado.</li>
-                                    <li><strong>Cliente GA4 en Server:</strong> En el contenedor Server, configura el
-                                        Cliente "GA4" para recibir los datos del GTM web.</li>
-                                    <li><strong>Etiquetas en Server:</strong> Configura las etiquetas correspondientes
-                                        en el contenedor Server (ej. etiqueta GA4 para reenviar a Google Analytics,
-                                        etiqueta Facebook CAPI, etc.).</li>
-                                    <li><strong>Beneficios:</strong> Mejora la precisión de datos, reduce la carga en el
-                                        navegador, permite controlar qué datos se envían a terceros, y ayuda a extender
-                                        la vida útil de las cookies de origen (first-party).</li>
-                                    <li><strong>Costo:</strong> Considera los costos asociados al hosting del servidor
-                                        (Google Cloud u otro).</li>
+                                    <li><strong>Infraestructura:</strong> Requiere configurar un entorno de servidor (ej. Google Cloud Run - App Engine ya no es la opción preferida para nuevos despliegues).</li>
+                                    <li><strong>Flujo de Datos:</strong> El GTM web envía los datos a tu contenedor de GTM Server (usando la etiqueta GA4 o Data Tag/Client). El contenedor Server procesa los datos y los reenvía a los endpoints finales (GA4, Facebook CAPI, etc.).</li>
+                                    <li><strong>Configuración GA4 Web:</strong> En la Variable de Configuración GA4 del GTM web, activa "Send to server container" y especifica la URL de tu servidor de etiquetado.</li>
+                                    <li><strong>Cliente GA4 en Server:</strong> En el contenedor Server, configura el Cliente "GA4" para recibir los datos del GTM web.</li>
+                                    <li><strong>Etiquetas en Server:</strong> Configura las etiquetas correspondientes en el contenedor Server (ej. etiqueta GA4 para reenviar a Google Analytics, etiqueta Facebook CAPI, etc.).</li>
+                                    <li><strong>Beneficios:</strong> Mejora la precisión de datos, reduce la carga en el navegador, permite controlar qué datos se envían a terceros, y ayuda a extender la vida útil de las cookies de origen (first-party).</li>
+                                    <li><strong>Costo:</strong> Considera los costos asociados al hosting del servidor (Google Cloud u otro).</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="collapsible-container border rounded-md overflow-hidden">
-                            <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
+                         <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button class="collapsible-trigger w-full flex justify-between items-center p-4 bg-[#80c431]/10 hover:bg-[#80c431]/20 text-left font-semibold text-[#5a8c23]">
                                 <span>4.8. Organización y Mantenimiento del Contenedor GTM</span>
                                 <span class="collapsible-icon text-[#80c431] text-xl font-bold">+</span>
                             </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
                                 <p>Un contenedor desorganizado se vuelve difícil de manejar.</p>
                                 <ul class="list-disc list-inside ml-4 space-y-1">
-                                    <li><strong>Nomenclatura Consistente:</strong> Define y sigue una convención de
-                                        nombres clara para etiquetas, activadores y variables (ej. `GA4 Event - Add to
-                                        Cart`, `Trigger - Click - Main CTA Button`, `DLV - Product Name`).</li>
-                                    <li><strong>Carpetas:</strong> Utiliza carpetas para agrupar elementos relacionados
-                                        (ej. por tipo de etiqueta, por sección del sitio, por iniciativa).</li>
-                                    <li><strong>Notas y Descripciones:</strong> Añade descripciones a etiquetas,
-                                        activadores y variables complejas explicando su propósito. Documenta las
-                                        versiones publicadas con notas claras sobre los cambios realizados.</li>
-                                    <li><strong>Limpieza Periódica:</strong> Revisa y elimina etiquetas, activadores y
-                                        variables obsoletos o no utilizados.</li>
-                                    <li><strong>Control de Versiones:</strong> Utiliza el historial de versiones de GTM
-                                        para revertir cambios si es necesario. Publica cambios en lotes lógicos.</li>
-                                    <li><strong>Entornos de GTM:</strong> Para implementaciones complejas o equipos
-                                        grandes, utiliza los entornos de GTM (ej. Desarrollo, Staging, Producción) para
-                                        probar cambios de forma aislada antes de publicarlos en vivo.</li>
+                                    <li><strong>Nomenclatura Consistente:</strong> Define y sigue una convención de nombres clara para etiquetas, activadores y variables (ej. `GA4 Event - Add to Cart`, `Trigger - Click - Main CTA Button`, `DLV - Product Name`).</li>
+                                    <li><strong>Carpetas:</strong> Utiliza carpetas para agrupar elementos relacionados (ej. por tipo de etiqueta, por sección del sitio, por iniciativa).</li>
+                                    <li><strong>Notas y Descripciones:</strong> Añade descripciones a etiquetas, activadores y variables complejas explicando su propósito. Documenta las versiones publicadas con notas claras sobre los cambios realizados.</li>
+                                    <li><strong>Limpieza Periódica:</strong> Revisa y elimina etiquetas, activadores y variables obsoletos o no utilizados.</li>
+                                    <li><strong>Control de Versiones:</strong> Utiliza el historial de versiones de GTM para revertir cambios si es necesario. Publica cambios en lotes lógicos.</li>
+                                    <li><strong>Entornos de GTM:</strong> Para implementaciones complejas o equipos grandes, utiliza los entornos de GTM (ej. Desarrollo, Staging, Producción) para probar cambios de forma aislada antes de publicarlos en vivo.</li>
                                 </ul>
                             </div>
                         </div>
@@ -654,9 +460,8 @@ window.dataLayer.push({
         </div>
 
         <footer class="mt-12 pt-6 border-t border-gray-300 text-center text-sm text-gray-500">
-            <div class="mb-2">
-                <img src="https://www.mentalidadweb.com/wp-content/uploads/2022/02/logomw.svg"
-                    alt="Logo Mentalidad Web Chile" class="h-8 sm:h-10 mx-auto">
+             <div class="mb-2">
+                  <img src="https://www.mentalidadweb.com/wp-content/uploads/2022/02/logomw.svg" alt="Logo Mentalidad Web Chile" class="h-8 sm:h-10 mx-auto">
             </div>
             © 2025 Mentalidad Web Chile. Todos los derechos reservados. | Reporte Interactivo GA4
         </footer>
@@ -709,17 +514,17 @@ window.dataLayer.push({
                 }
             });
 
-            // Handle edge case for the very top of the page
-            if (currentSectionId === '' && scrollPosition < sections[0].offsetTop - scrollOffset) {
-                currentSectionId = sections[0].getAttribute('id');
-            }
-            // Handle edge case for the very bottom of the page
-            const totalHeight = document.documentElement.scrollHeight;
-            const viewportHeight = window.innerHeight;
-            // Trigger last section if near bottom
-            if (scrollPosition + viewportHeight >= totalHeight - 50) {
-                currentSectionId = sections[sections.length - 1].getAttribute('id');
-            }
+             // Handle edge case for the very top of the page
+             if (currentSectionId === '' && scrollPosition < sections[0].offsetTop - scrollOffset) {
+                 currentSectionId = sections[0].getAttribute('id');
+             }
+             // Handle edge case for the very bottom of the page
+             const totalHeight = document.documentElement.scrollHeight;
+             const viewportHeight = window.innerHeight;
+              // Trigger last section if near bottom
+             if (scrollPosition + viewportHeight >= totalHeight - 50) {
+                 currentSectionId = sections[sections.length - 1].getAttribute('id');
+             }
 
 
             navLinks.forEach(link => {
@@ -739,5 +544,4 @@ window.dataLayer.push({
     </script>
 
 </body>
-
 </html>
