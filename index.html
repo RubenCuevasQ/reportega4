@@ -139,18 +139,16 @@
 
         /* Button styling updated */
         .btn-primary {
-            /* New class for primary action buttons */
+            /* Base class for primary action buttons */
             @apply inline-flex items-center justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2;
         }
 
         .btn-brand-green {
+            /* Light green button */
             @apply bg-[#80c431] hover:bg-[#6aa827] focus:ring-[#80c431];
         }
 
-        .btn-brand-dark-green {
-            /* For Generate button */
-            @apply bg-[#001720] hover:bg-[#002f3f] focus:ring-[#001720];
-        }
+        /* Removed .btn-brand-dark-green from here as it will be applied directly or via specific class */
 
         /* Output area styling */
         #output-documentation {
@@ -167,6 +165,7 @@
 
         /* Download options panel */
         #download-options-panel {
+            /* This is part of seccion7 now */
             @apply mt-4 p-4 border border-gray-300 rounded-md bg-gray-50 shadow;
         }
 
@@ -973,7 +972,8 @@
                                 <code>reproduccion_video:video_title,video_percent; descarga_pdf:file_name</code></p>
                         </div>
                         <div>
-                            <button type="button" id="generate-btn" class="btn-primary btn-brand-dark-green">Generar
+                            <button type="button" id="generate-btn"
+                                class="inline-flex items-center justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#001720] hover:bg-[#002f3f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001720]">Generar
                                 Guía de Marcación</button>
                         </div>
                     </form>
@@ -984,7 +984,7 @@
                     </div>
                 </section>
 
-                <section id="seccion7" class="mt-10 p-6 bg-gray-200 rounded-lg shadow-md">
+                <section id="seccion7" class="mt-10 p-6 bg-gray-200 rounded-lg shadow-md hidden">
                     <h2 class="text-xl font-semibold mb-4 text-mw-green-darker">Descargar Guía de Marcación Generada
                     </h2>
                     <p class="text-gray-700 mb-4">Utiliza las siguientes opciones para guardar el contenido de la guía
@@ -1107,6 +1107,7 @@
         // --- Tagging Generator Logic ---
         const generateBtn = document.getElementById('generate-btn');
         const outputDiv = document.getElementById('output-documentation');
+        const downloadSection = document.getElementById('seccion7');
 
         function parseParameters(paramString) {
             const paramMap = new Map();
@@ -1421,6 +1422,11 @@ gtag('consent', 'update', {
                                         </ul>`;
 
                 outputDiv.innerHTML = recommendationsHTML;
+                // Show the download section only after guide generation
+                if (downloadSection) {
+                    downloadSection.classList.remove('hidden');
+                }
+
                 setTimeout(() => {
                     const outputElement = document.getElementById('output-documentation');
                     if (outputElement) {
@@ -1439,10 +1445,11 @@ gtag('consent', 'update', {
             downloadPdfBtn.addEventListener('click', () => {
                 const guideContent = document.getElementById('output-documentation').innerHTML;
                 if (guideContent.includes("Guía de Marcación Personalizada")) {
-                    downloadInstructionsDiv.classList.remove('hidden');
+                    if (downloadInstructionsDiv) downloadInstructionsDiv.classList.remove('hidden');
                     alert("Simulación de descarga PDF de la Guía:\n\nPara guardar la guía generada como PDF, usa la función 'Imprimir' de tu navegador (Ctrl+P o Cmd+P) y selecciona 'Guardar como PDF' como destino. Asegúrate de que solo la guía esté visible o selecciona las páginas correspondientes si es necesario.");
                 } else {
                     alert("Por favor, primero genera la Guía de Marcación en la Sección 6.");
+                    if (downloadInstructionsDiv) downloadInstructionsDiv.classList.add('hidden');
                 }
             });
         }
@@ -1453,7 +1460,7 @@ gtag('consent', 'update', {
                 const guideText = guideContentElement.innerText;
 
                 if (guideContentElement.innerHTML.includes("Guía de Marcación Personalizada") && guideText.trim() !== "Completa el formulario y haz clic en \"Generar Guía de Marcación\" para ver las recomendaciones.") {
-                    downloadInstructionsDiv.classList.remove('hidden');
+                    if (downloadInstructionsDiv) downloadInstructionsDiv.classList.remove('hidden');
                     try {
                         navigator.clipboard.writeText(guideText).then(() => {
                             alert("Texto de la Guía de Marcación copiado al portapapeles.\n\nPuedes pegarlo en un editor de texto.");
@@ -1465,6 +1472,7 @@ gtag('consent', 'update', {
                     }
                 } else {
                     alert("Por favor, primero genera la Guía de Marcación en la Sección 6 para poder copiar su contenido.");
+                    if (downloadInstructionsDiv) downloadInstructionsDiv.classList.add('hidden');
                 }
             });
         }
