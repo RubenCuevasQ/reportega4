@@ -137,9 +137,19 @@
             @apply h-4 w-4 text-[#80c431] focus:ring-[#80c431] border-gray-300 rounded;
         }
 
-        /* Button styling */
-        .btn-generate {
-            @apply inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#80c431] hover:bg-[#6aa827] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#80c431];
+        /* Button styling updated */
+        .btn-primary {
+            /* New class for primary action buttons */
+            @apply inline-flex items-center justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2;
+        }
+
+        .btn-brand-green {
+            @apply bg-[#80c431] hover:bg-[#6aa827] focus:ring-[#80c431];
+        }
+
+        .btn-brand-dark-green {
+            /* For Generate button */
+            @apply bg-[#001720] hover:bg-[#002f3f] focus:ring-[#001720];
         }
 
         /* Output area styling */
@@ -153,6 +163,23 @@
 
         #output-documentation h5 {
             @apply text-md font-semibold text-gray-700 mt-3 mb-1;
+        }
+
+        /* Download options panel */
+        #download-options-panel {
+            @apply mt-4 p-4 border border-gray-300 rounded-md bg-gray-50 shadow;
+        }
+
+        #download-options-panel p {
+            @apply text-sm text-gray-700 mb-2;
+        }
+
+        #download-options-panel ul {
+            @apply list-disc list-inside space-y-1;
+        }
+
+        #download-options-panel a {
+            @apply text-mw-green hover:underline;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -946,8 +973,8 @@
                                 <code>reproduccion_video:video_title,video_percent; descarga_pdf:file_name</code></p>
                         </div>
                         <div>
-                            <button type="button" id="generate-btn" class="btn-generate">Generar Guía de
-                                Marcación</button>
+                            <button type="button" id="generate-btn" class="btn-primary btn-brand-dark-green">Generar
+                                Guía de Marcación</button>
                         </div>
                     </form>
 
@@ -956,6 +983,42 @@
                             Marcación" para ver las recomendaciones.</p>
                     </div>
                 </section>
+
+                <section id="seccion7" class="mt-10 p-6 bg-gray-200 rounded-lg shadow-md">
+                    <h2 class="text-xl font-semibold mb-4 text-mw-green-darker">Descargar Guía de Marcación Generada
+                    </h2>
+                    <p class="text-gray-700 mb-4">Utiliza las siguientes opciones para guardar el contenido de la guía
+                        de marcación generada en la Sección 6:</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button type="button" id="download-pdf-btn"
+                            class="btn-primary btn-brand-green w-full sm:w-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                            Guardar Guía como PDF (Simulado)
+                        </button>
+                        <button type="button" id="copy-text-btn" class="btn-primary btn-brand-green w-full sm:w-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375m7.5-10.375l-1.5-1.5m1.5 1.5v-2.25m0 5.25c.621 0 1.125.504 1.125 1.125v3.375c0 .621-.504 1.125-1.125 1.125h-1.5c-.621 0-1.125-.504-1.125-1.125v-3.375c0-.621.504-1.125 1.125-1.125h1.5z" />
+                            </svg>
+                            Copiar Texto de la Guía (Simulado)
+                        </button>
+                    </div>
+                    <div id="download-instructions" class="mt-4 text-sm text-gray-600 hidden">
+                        <p><strong>Para guardar la guía como PDF:</strong> Primero, genera la guía en la Sección 6.
+                            Luego, usa la función "Imprimir" de tu navegador (Ctrl+P o Cmd+P) y selecciona "Guardar como
+                            PDF" como destino. Asegúrate de ajustar la selección de páginas si solo deseas imprimir la
+                            guía generada.</p>
+                        <p><strong>Para copiar el texto de la guía:</strong> Primero, genera la guía. Luego, selecciona
+                            manualmente el contenido dentro del recuadro "Guía de Marcación Personalizada" y cópialo
+                            (Ctrl+C o Cmd+C) para pegarlo en un editor de texto.</p>
+                    </div>
+                </section>
+
 
             </main>
         </div>
@@ -977,8 +1040,7 @@
             const icon = trigger.querySelector('.collapsible-icon');
             const isMainSectionTrigger = trigger.querySelector('span') === null || trigger.querySelector('span').textContent === '(Haz clic para expandir/colapsar)';
 
-            // Default state: Main sections closed, details potentially open if coded that way initially
-            if (isMainSectionTrigger && content && !content.classList.contains('keep-open')) { // Added 'keep-open' check if needed
+            if (isMainSectionTrigger && content && !content.classList.contains('keep-open')) {
                 content.classList.remove('open');
                 if (icon) icon.textContent = '+';
                 if (trigger.closest('.collapsible-container')) {
@@ -989,22 +1051,17 @@
                 if (trigger.closest('.collapsible-container')) {
                     trigger.closest('.collapsible-container').classList.add('border-mw-green', 'border-2');
                 }
-            } else if (content) { // Ensure non-open content starts with '+'
+            } else if (content) {
                 if (icon) icon.textContent = '+';
             }
 
             trigger.addEventListener('click', (e) => {
-                // Prevent nested collapsibles from closing parent when clicked
                 e.stopPropagation();
-
                 const currentContent = trigger.nextElementSibling;
                 const currentIcon = trigger.querySelector('.collapsible-icon');
                 const currentContainer = trigger.closest('.collapsible-container');
-
                 if (!currentContent) return;
-
                 currentContent.classList.toggle('open');
-
                 if (currentContent.classList.contains('open')) {
                     if (currentIcon) currentIcon.textContent = '-';
                     if (currentContainer) {
@@ -1023,151 +1080,133 @@
         // --- Active Nav Link on Scroll ---
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('#sidebar-nav .nav-link');
-
         function changeActiveLink() {
             let currentSectionId = '';
             const scrollOffset = 120;
             const scrollPosition = window.scrollY;
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - scrollOffset;
                 if (scrollPosition >= sectionTop) {
                     currentSectionId = section.getAttribute('id');
                 }
             });
-
-            // Fallback to first section if nothing else is matched (e.g., at the very top)
             if (!currentSectionId && sections.length > 0) {
                 currentSectionId = sections[0].id;
             }
-
-
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                const linkHref = link.getAttribute('href')?.substring(1); // Added optional chaining
+                const linkHref = link.getAttribute('href')?.substring(1);
                 if (linkHref === currentSectionId) {
                     link.classList.add('active');
                 }
             });
         }
-        changeActiveLink(); // Initial call
+        changeActiveLink();
         window.addEventListener('scroll', changeActiveLink);
 
         // --- Tagging Generator Logic ---
         const generateBtn = document.getElementById('generate-btn');
         const outputDiv = document.getElementById('output-documentation');
-        const form = document.getElementById('tagging-form');
 
-        // Function to parse the parameters input string
         function parseParameters(paramString) {
             const paramMap = new Map();
-            if (!paramString || paramString.trim() === '') {
-                return paramMap;
-            }
-            const eventParamPairs = paramString.split(';');
-            eventParamPairs.forEach(pair => {
+            if (!paramString || paramString.trim() === '') return paramMap;
+            paramString.split(';').forEach(pair => {
                 const parts = pair.split(':');
                 if (parts.length === 2) {
                     const eventName = parts[0].trim();
                     const params = parts[1].split(',').map(p => p.trim()).filter(p => p.length > 0);
-                    if (eventName && params.length > 0) {
-                        paramMap.set(eventName, params);
-                    }
+                    if (eventName && params.length > 0) paramMap.set(eventName, params);
                 }
             });
             return paramMap;
         }
 
+        if (generateBtn) {
+            generateBtn.addEventListener('click', () => {
+                const platform = document.getElementById('site-platform').value;
+                const isEcommerce = document.getElementById('feature-ecommerce').checked;
+                const hasAuth = document.getElementById('feature-auth').checked;
+                const hasLeadgen = document.getElementById('feature-leadgen').checked;
+                const useSST = document.getElementById('option-sst').checked;
+                const cmpOption = document.getElementById('option-cmp').value;
+                const keyActionsRaw = document.getElementById('key-actions').value;
+                const keyActions = keyActionsRaw.split(',').map(a => a.trim()).filter(a => a.length > 0);
+                const keyParamsRaw = document.getElementById('key-parameters').value;
+                const keyParamsMap = parseParameters(keyParamsRaw);
 
-        generateBtn.addEventListener('click', () => {
-            const platform = document.getElementById('site-platform').value;
-            const isEcommerce = document.getElementById('feature-ecommerce').checked;
-            const hasAuth = document.getElementById('feature-auth').checked;
-            const hasLeadgen = document.getElementById('feature-leadgen').checked;
-            const useSST = document.getElementById('option-sst').checked;
-            const cmpOption = document.getElementById('option-cmp').value;
-            const keyActionsRaw = document.getElementById('key-actions').value;
-            const keyActions = keyActionsRaw.split(',')
-                .map(action => action.trim())
-                .filter(action => action.length > 0);
-            // Get and parse parameters
-            const keyParamsRaw = document.getElementById('key-parameters').value;
-            const keyParamsMap = parseParameters(keyParamsRaw);
+                let recommendationsHTML = `<h4>Guía de Marcación Personalizada</h4>`;
 
-            let recommendationsHTML = `<h4>Guía de Marcación Personalizada</h4>`;
+                // 1. GTM Installation
+                recommendationsHTML += `<h5>1. Instalación de Google Tag Manager (GTM)</h5>`;
+                switch (platform) {
+                    case 'wordpress':
+                        recommendationsHTML += `<p><strong>Recomendación para WordPress:</strong> Usa un plugin como <a href="https://gtm4wp.com/" target="_blank" class="text-mw-green underline">GTM4WP</a> para facilitar la instalación de GTM y la implementación del Data Layer (especialmente para e-commerce con WooCommerce).</p>
+                                            <p><strong>Pasos Manuales (Alternativa):</strong></p>
+                                            <ol class="list-decimal list-inside ml-4 text-sm">
+                                                    <li>Crea un contenedor GTM en <a href="https://tagmanager.google.com/" target="_blank" class="text-mw-green underline">tagmanager.google.com</a>.</li>
+                                                    <li>Copia los dos fragmentos de código GTM proporcionados.</li>
+                                                    <li>Pega el primer fragmento (<code>&lt;script&gt;</code>) lo más alto posible en el <code>&lt;head&gt;</code> de tu tema de WordPress (puedes editar <code>header.php</code> en tu tema hijo o usar hooks/filtros).</li>
+                                                    <li>Pega el segundo fragmento (<code>&lt;noscript&gt;</code>) inmediatamente después de la etiqueta de apertura <code>&lt;body&gt;</code> (en <code>header.php</code> o similar).</li>
+                                            </ol>`;
+                        break;
+                    case 'shopify':
+                        recommendationsHTML += `<p><strong>Recomendación para Shopify:</strong></p>
+                                            <ol class="list-decimal list-inside ml-4 text-sm">
+                                                    <li>Ve a tu admin de Shopify > Tienda online > Preferencias > Google Analytics.</li>
+                                                    <li>Pega tu ID de medición de GA4 (G-XXXXXXXXXX) aquí para la integración nativa básica.</li>
+                                                    <li>Para una implementación completa con GTM y Data Layers de e-commerce:</li>
+                                                    <li>Edita tu tema (<code>theme.liquid</code>): Pega los snippets de GTM (<code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>) como se indica en GTM.</li>
+                                                    <li>Considera usar una App de Shopify de terceros o contratar desarrollo para implementar Data Layers detallados de e-commerce (ver <a href="https://developers.google.com/tag-manager/ecommerce-ga4" target="_blank" class="text-mw-green underline">documentación de Google</a>). La integración nativa de Shopify con GA4 puede ser limitada.</li>
+                                            </ol>`;
+                        break;
+                    case 'react': case 'angular': case 'vue':
+                        recommendationsHTML += `<p><strong>Recomendación para ${platform.charAt(0).toUpperCase() + platform.slice(1)} (SPA):</strong></p>
+                                            <ol class="list-decimal list-inside ml-4 text-sm">
+                                                    <li>Instala GTM añadiendo los snippets al archivo <code>index.html</code> principal de tu aplicación (uno en <code>&lt;head&gt;</code>, otro al inicio de <code>&lt;body&gt;</code>).</li>
+                                                    <li><strong>Importante para SPAs:</strong> Necesitas enviar eventos <code>page_view</code> manualmente cuando la ruta cambie en tu aplicación, ya que GTM no los detecta automáticamente.</li>`;
+                        if (platform === 'react') {
+                            recommendationsHTML += `<li>Considera usar librerías como <a href="https://www.npmjs.com/package/react-gtm-module" target="_blank" class="text-mw-green underline">react-gtm-module</a> para inicializar GTM y facilitar el envío de eventos y dataLayers.</li>
+                                                    <li>Para el seguimiento de cambios de ruta, integra el envío del dataLayer de page_view en tu lógica de enrutamiento (ej. usando <code>useEffect</code> con dependencias de ubicación en React Router).</li>`;
+                        } else if (platform === 'angular') {
+                            recommendationsHTML += `<li>Puedes inicializar GTM en <code>main.ts</code> o <code>app.component.ts</code>.</li>
+                                                    <li>Suscríbete a los eventos del Router de Angular (<code>NavigationEnd</code>) para detectar cambios de ruta y enviar los dataLayers de page_view correspondientes.</li>`;
+                        } else if (platform === 'vue') {
+                            recommendationsHTML += `<li>Puedes inicializar GTM en <code>main.js</code>.</li>
+                                                    <li>Usa los hooks de navegación de Vue Router (ej. <code>afterEach</code>) para detectar cambios de ruta y enviar los dataLayers de page_view. Considera librerías como <a href="https://www.npmjs.com/package/vue-gtm" target="_blank" class="text-mw-green underline">vue-gtm</a>.</li>`;
+                        }
+                        recommendationsHTML += `</ol>`;
+                        break;
+                    default:
+                        recommendationsHTML += `<p><strong>Instalación Manual:</strong></p>
+                                            <ol class="list-decimal list-inside ml-4 text-sm">
+                                                    <li>Crea un contenedor GTM en <a href="https://tagmanager.google.com/" target="_blank" class="text-mw-green underline">tagmanager.google.com</a>.</li>
+                                                    <li>Copia los dos fragmentos de código GTM proporcionados.</li>
+                                                    <li>Pega el primer fragmento (<code>&lt;script&gt;</code>) lo más alto posible en el <code>&lt;head&gt;</code> de todas las páginas de tu sitio.</li>
+                                                    <li>Pega el segundo fragmento (<code>&lt;noscript&gt;</code>) inmediatamente después de la etiqueta de apertura <code>&lt;body&gt;</code> en todas las páginas.</li>
+                                            </ol>`;
+                        break;
+                }
 
-            // 1. GTM Installation (Same as before)
-            recommendationsHTML += `<h5>1. Instalación de Google Tag Manager (GTM)</h5>`;
-            switch (platform) {
-                case 'wordpress':
-                    recommendationsHTML += `<p><strong>Recomendación para WordPress:</strong> Usa un plugin como <a href="https://gtm4wp.com/" target="_blank" class="text-mw-green underline">GTM4WP</a> para facilitar la instalación de GTM y la implementación del Data Layer (especialmente para e-commerce con WooCommerce).</p>
-                                           <p><strong>Pasos Manuales (Alternativa):</strong></p>
-                                           <ol class="list-decimal list-inside ml-4 text-sm">
-                                                <li>Crea un contenedor GTM en <a href="https://tagmanager.google.com/" target="_blank" class="text-mw-green underline">tagmanager.google.com</a>.</li>
-                                                <li>Copia los dos fragmentos de código GTM proporcionados.</li>
-                                                <li>Pega el primer fragmento (<code>&lt;script&gt;</code>) lo más alto posible en el <code>&lt;head&gt;</code> de tu tema de WordPress (puedes editar <code>header.php</code> en tu tema hijo o usar hooks/filtros).</li>
-                                                <li>Pega el segundo fragmento (<code>&lt;noscript&gt;</code>) inmediatamente después de la etiqueta de apertura <code>&lt;body&gt;</code> (en <code>header.php</code> o similar).</li>
-                                           </ol>`;
-                    break;
-                case 'shopify':
-                    recommendationsHTML += `<p><strong>Recomendación para Shopify:</strong></p>
-                                           <ol class="list-decimal list-inside ml-4 text-sm">
-                                                <li>Ve a tu admin de Shopify > Tienda online > Preferencias > Google Analytics.</li>
-                                                <li>Pega tu ID de medición de GA4 (G-XXXXXXXXXX) aquí para la integración nativa básica.</li>
-                                                <li>Para una implementación completa con GTM y Data Layers de e-commerce:</li>
-                                                <li>Edita tu tema (<code>theme.liquid</code>): Pega los snippets de GTM (<code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>) como se indica en GTM.</li>
-                                                <li>Considera usar una App de Shopify de terceros o contratar desarrollo para implementar Data Layers detallados de e-commerce (ver <a href="https://developers.google.com/tag-manager/ecommerce-ga4" target="_blank" class="text-mw-green underline">documentación de Google</a>). La integración nativa de Shopify con GA4 puede ser limitada.</li>
-                                           </ol>`;
-                    break;
-                case 'react':
-                case 'angular':
-                case 'vue':
-                    recommendationsHTML += `<p><strong>Recomendación para ${platform.charAt(0).toUpperCase() + platform.slice(1)} (SPA):</strong></p>
-                                           <ol class="list-decimal list-inside ml-4 text-sm">
-                                                <li>Instala GTM añadiendo los snippets al archivo <code>index.html</code> principal de tu aplicación (uno en <code>&lt;head&gt;</code>, otro al inicio de <code>&lt;body&gt;</code>).</li>
-                                                <li><strong>Importante para SPAs:</strong> Necesitas enviar eventos <code>page_view</code> manualmente cuando la ruta cambie en tu aplicación, ya que GTM no los detecta automáticamente.</li>`;
-                    if (platform === 'react') {
-                        recommendationsHTML += `<li>Considera usar librerías como <a href="https://www.npmjs.com/package/react-gtm-module" target="_blank" class="text-mw-green underline">react-gtm-module</a> para inicializar GTM y facilitar el envío de eventos y dataLayers.</li>
-                                                <li>Para el seguimiento de cambios de ruta, integra el envío del dataLayer de page_view en tu lógica de enrutamiento (ej. usando <code>useEffect</code> con dependencias de ubicación en React Router).</li>`;
-                    } else if (platform === 'angular') {
-                        recommendationsHTML += `<li>Puedes inicializar GTM en <code>main.ts</code> o <code>app.component.ts</code>.</li>
-                                                 <li>Suscríbete a los eventos del Router de Angular (<code>NavigationEnd</code>) para detectar cambios de ruta y enviar los dataLayers de page_view correspondientes.</li>`;
-                    } else if (platform === 'vue') {
-                        recommendationsHTML += `<li>Puedes inicializar GTM en <code>main.js</code>.</li>
-                                                 <li>Usa los hooks de navegación de Vue Router (ej. <code>afterEach</code>) para detectar cambios de ruta y enviar los dataLayers de page_view. Considera librerías como <a href="https://www.npmjs.com/package/vue-gtm" target="_blank" class="text-mw-green underline">vue-gtm</a>.</li>`;
-                    }
-                    recommendationsHTML += `</ol>`;
-                    break;
-                default: // HTML, Otro
-                    recommendationsHTML += `<p><strong>Instalación Manual:</strong></p>
-                                           <ol class="list-decimal list-inside ml-4 text-sm">
-                                                <li>Crea un contenedor GTM en <a href="https://tagmanager.google.com/" target="_blank" class="text-mw-green underline">tagmanager.google.com</a>.</li>
-                                                <li>Copia los dos fragmentos de código GTM proporcionados.</li>
-                                                <li>Pega el primer fragmento (<code>&lt;script&gt;</code>) lo más alto posible en el <code>&lt;head&gt;</code> de todas las páginas de tu sitio.</li>
-                                                <li>Pega el segundo fragmento (<code>&lt;noscript&gt;</code>) inmediatamente después de la etiqueta de apertura <code>&lt;body&gt;</code> en todas las páginas.</li>
-                                           </ol>`;
-                    break;
-            }
+                // 2. GA4 Configuration Tag
+                recommendationsHTML += `<h5>2. Configuración de la Etiqueta GA4 en GTM</h5>
+                                        <ol class="list-decimal list-inside ml-4 text-sm">
+                                            <li>Dentro de GTM, crea una nueva etiqueta de tipo "Google Tag".</li>
+                                            <li>En "Tag ID", introduce tu ID de Medición de GA4 (ej. G-XXXXXXXXXX).</li>
+                                            <li>En la sección "Configuration settings", puedes añadir parámetros que se enviarán con cada evento (ej. <code>send_page_view: false</code> si gestionas las page views manualmente en una SPA).</li>
+                                            <li>Configura el activador (Trigger) para que sea "Initialization - All Pages". Esto asegura que la etiqueta de configuración se cargue lo antes posible en todas las páginas.</li>
+                                            <li>Guarda la etiqueta (ej. "GA4 Config - G-XXXXXXXXXX").</li>
+                                        </ol>`;
+                if (platform === 'react' || platform === 'angular' || platform === 'vue') {
+                    recommendationsHTML += `<p class="mt-2 text-sm text-orange-700"><strong>Nota SPA:</strong> Si configuras <code>send_page_view: false</code> en la etiqueta de Configuración, DEBES crear una etiqueta de Evento GA4 separada para enviar el evento <code>page_view</code> (o el evento recomendado <code>virtual_page_view</code>) manualmente en cada cambio de ruta, usando un activador de Evento Personalizado disparado desde tu código.</p>`;
+                }
 
-            // 2. GA4 Configuration Tag (Same as before)
-            recommendationsHTML += `<h5>2. Configuración de la Etiqueta GA4 en GTM</h5>
-                                    <ol class="list-decimal list-inside ml-4 text-sm">
-                                        <li>Dentro de GTM, crea una nueva etiqueta de tipo "Google Tag".</li>
-                                        <li>En "Tag ID", introduce tu ID de Medición de GA4 (ej. G-XXXXXXXXXX).</li>
-                                        <li>En la sección "Configuration settings", puedes añadir parámetros que se enviarán con cada evento (ej. <code>send_page_view: false</code> si gestionas las page views manualmente en una SPA).</li>
-                                        <li>Configura el activador (Trigger) para que sea "Initialization - All Pages". Esto asegura que la etiqueta de configuración se cargue lo antes posible en todas las páginas.</li>
-                                        <li>Guarda la etiqueta (ej. "GA4 Config - G-XXXXXXXXXX").</li>
-                                    </ol>`;
-            if (platform === 'react' || platform === 'angular' || platform === 'vue') {
-                recommendationsHTML += `<p class="mt-2 text-sm text-orange-700"><strong>Nota SPA:</strong> Si configuras <code>send_page_view: false</code> en la etiqueta de Configuración, DEBES crear una etiqueta de Evento GA4 separada para enviar el evento <code>page_view</code> (o el evento recomendado <code>virtual_page_view</code>) manualmente en cada cambio de ruta, usando un activador de Evento Personalizado disparado desde tu código.</p>`;
-            }
-
-            // 3. Data Layer Structure & Standard Events (Same as before, content depends on checkboxes)
-            recommendationsHTML += `<h5>3. Estructura del Data Layer y Eventos Estándar</h5>
-                                    <p>Implementa el Data Layer ANTES del snippet de GTM en el <code>&lt;head&gt;</code>. Usa <code>window.dataLayer = window.dataLayer || [];</code> seguido de <code>dataLayer.push({...});</code> para enviar datos.</p>
-                                    <p><strong>Evento Básico (Page View):</strong></p>
-                                    <p class="text-sm">Generalmente manejado por la etiqueta de Configuración GA4 (a menos que sea SPA y lo desactives). Puedes enriquecerlo con datos:</p>
-                                    <pre><code class="language-javascript">window.dataLayer = window.dataLayer || [];
+                // 3. Data Layer Structure & Standard Events
+                recommendationsHTML += `<h5>3. Estructura del Data Layer y Eventos Estándar</h5>
+                                        <p>Implementa el Data Layer ANTES del snippet de GTM en el <code>&lt;head&gt;</code>. Usa <code>window.dataLayer = window.dataLayer || [];</code> seguido de <code>dataLayer.push({...});</code> para enviar datos.</p>
+                                        <p><strong>Evento Básico (Page View):</strong></p>
+                                        <p class="text-sm">Generalmente manejado por la etiqueta de Configuración GA4 (a menos que sea SPA y lo desactives). Puedes enriquecerlo con datos:</p>
+                                        <pre><code class="language-javascript">window.dataLayer = window.dataLayer || [];
 dataLayer.push({
   'event': 'page_view_data', // Evento opcional para capturar datos adicionales
   'page_type': 'categoria_blog', // Ejemplo: tipo de página
@@ -1176,45 +1215,45 @@ dataLayer.push({
 });
 // El evento 'page_view' real se envía por GTM (automático o manual en SPA)</code></pre>`;
 
-            if (hasAuth) {
-                recommendationsHTML += `<h5>Eventos de Autenticación:</h5>
-                                        <p class="text-sm">Envía estos eventos cuando ocurran las acciones correspondientes.</p>
-                                        <p><strong>Login Exitoso:</strong></p>
-                                        <pre><code class="language-javascript">dataLayer.push({
+                if (hasAuth) {
+                    recommendationsHTML += `<h5>Eventos de Autenticación:</h5>
+                                            <p class="text-sm">Envía estos eventos cuando ocurran las acciones correspondientes.</p>
+                                            <p><strong>Login Exitoso:</strong></p>
+                                            <pre><code class="language-javascript">dataLayer.push({
   'event': 'login',
   'method': 'google' // O 'email', 'facebook', etc.
 });</code></pre>
-                                        <p><strong>Registro Exitoso:</strong></p>
-                                        <pre><code class="language-javascript">dataLayer.push({
+                                            <p><strong>Registro Exitoso:</strong></p>
+                                            <pre><code class="language-javascript">dataLayer.push({
   'event': 'sign_up',
   'method': 'email' // O 'google', etc.
 });</code></pre>
-                                        <p><strong>Propiedad de Usuario (Recomendado):</strong> Considera enviar una propiedad de usuario para identificar usuarios logueados en todas sus sesiones:</p>
-                                         <pre><code class="language-javascript">// Enviar DESPUÉS del login exitoso
+                                            <p><strong>Propiedad de Usuario (Recomendado):</strong> Considera enviar una propiedad de usuario para identificar usuarios logueados en todas sus sesiones:</p>
+                                            <pre><code class="language-javascript">// Enviar DESPUÉS del login exitoso
 dataLayer.push({'user_id': 'USER_ID_AQUI'}); // Si tienes un User ID estable y no PII
 dataLayer.push({'event':'set_user_properties', 'user_properties': { 'login_status': 'logged_in' }});
 
 // Enviar al CERRAR SESIÓN
 dataLayer.push({'event':'set_user_properties', 'user_properties': { 'login_status': 'logged_out' }});</code></pre>
-                                        <p class="text-xs text-gray-500">Recuerda registrar 'login_status' como Dimensión Personalizada de Usuario en GA4.</p>`;
-            }
+                                            <p class="text-xs text-gray-500">Recuerda registrar 'login_status' como Dimensión Personalizada de Usuario en GA4.</p>`;
+                }
 
-            if (hasLeadgen) {
-                recommendationsHTML += `<h5>Evento de Generación de Leads:</h5>
-                                        <p class="text-sm">Envía este evento TRAS el envío exitoso de un formulario importante.</p>
-                                        <pre><code class="language-javascript">dataLayer.push({
+                if (hasLeadgen) {
+                    recommendationsHTML += `<h5>Evento de Generación de Leads:</h5>
+                                            <p class="text-sm">Envía este evento TRAS el envío exitoso de un formulario importante.</p>
+                                            <pre><code class="language-javascript">dataLayer.push({
   'event': 'generate_lead',
   'form_id': 'contact_form', // Identificador del formulario
   'form_location': 'footer' // O 'sidebar', 'popup', etc.
 });</code></pre>
-                                        <p class="text-xs text-gray-500">Registra 'form_id' y 'form_location' como Dimensiones Personalizadas de Evento en GA4 si deseas analizarlos.</p>`;
-            }
+                                            <p class="text-xs text-gray-500">Registra 'form_id' y 'form_location' como Dimensiones Personalizadas de Evento en GA4 si deseas analizarlos.</p>`;
+                }
 
-            if (isEcommerce) {
-                recommendationsHTML += `<h5>Eventos de E-commerce (Esquema GA4):</h5>
-                                        <p class="text-sm">Implementa los siguientes eventos clave según el flujo de tu e-commerce. Usa la <a href="https://developers.google.com/tag-manager/ecommerce-ga4" target="_blank" class="text-mw-green underline">documentación oficial de Google</a> como referencia detallada.</p>
-                                        <p><strong>Ver Lista de Productos (<code>view_item_list</code>):</strong></p>
-                                        <pre><code class="language-javascript">// En páginas de categoría, búsqueda, etc.
+                if (isEcommerce) {
+                    recommendationsHTML += `<h5>Eventos de E-commerce (Esquema GA4):</h5>
+                                            <p class="text-sm">Implementa los siguientes eventos clave según el flujo de tu e-commerce. Usa la <a href="https://developers.google.com/tag-manager/ecommerce-ga4" target="_blank" class="text-mw-green underline">documentación oficial de Google</a> como referencia detallada.</p>
+                                            <p><strong>Ver Lista de Productos (<code>view_item_list</code>):</strong></p>
+                                            <pre><code class="language-javascript">// En páginas de categoría, búsqueda, etc.
 dataLayer.push({
   event: 'view_item_list',
   ecommerce: {
@@ -1222,121 +1261,108 @@ dataLayer.push({
     item_list_name: 'Ropa para Hombre',
     items: [
       { item_id: 'SKU1', item_name: 'Camisa Lino', price: 25000, item_category: 'Camisas', quantity: 1, index: 1 },
-      { item_id: 'SKU2', item_name: 'Pantalón Cargo', price: 35000, item_category: 'Pantalones', quantity: 1, index: 2 },
-      // ... más items
+      { item_id: 'SKU2', item_name: 'Pantalón Cargo', price: 35000, item_category: 'Pantalones', quantity: 1, index: 2 }
     ]
   }
 });</code></pre>
-                                        <p><strong>Ver Detalles del Producto (<code>view_item</code>):</strong></p>
-                                        <pre><code class="language-javascript">// En la página de detalle del producto
+                                            <p><strong>Ver Detalles del Producto (<code>view_item</code>):</strong></p>
+                                            <pre><code class="language-javascript">// En la página de detalle del producto
 dataLayer.push({
   event: 'view_item',
   ecommerce: {
     currency: 'CLP',
-    value: 25000, // Precio del item
-    items: [
-      { item_id: 'SKU1', item_name: 'Camisa Lino', price: 25000, item_category: 'Camisas', item_variant: 'Azul M' }
-    ]
+    value: 25000,
+    items: [ { item_id: 'SKU1', item_name: 'Camisa Lino', price: 25000, item_category: 'Camisas', item_variant: 'Azul M' } ]
   }
 });</code></pre>
-                                         <p><strong>Añadir al Carrito (<code>add_to_cart</code>):</strong></p>
-                                        <pre><code class="language-javascript">// Al hacer clic en "Añadir al carrito"
+                                            <p><strong>Añadir al Carrito (<code>add_to_cart</code>):</strong></p>
+                                            <pre><code class="language-javascript">// Al hacer clic en "Añadir al carrito"
 dataLayer.push({
   event: 'add_to_cart',
   ecommerce: {
     currency: 'CLP',
-    value: 25000, // Valor del item añadido
-    items: [
-      { item_id: 'SKU1', item_name: 'Camisa Lino', price: 25000, item_category: 'Camisas', item_variant: 'Azul M', quantity: 1 }
-    ]
+    value: 25000,
+    items: [ { item_id: 'SKU1', item_name: 'Camisa Lino', price: 25000, item_category: 'Camisas', item_variant: 'Azul M', quantity: 1 } ]
   }
 });</code></pre>
-                                         <p><strong>Ver Carrito (<code>view_cart</code>):</strong></p>
-                                        <pre><code class="language-javascript">// Al visitar la página del carrito
+                                            <p><strong>Ver Carrito (<code>view_cart</code>):</strong></p>
+                                            <pre><code class="language-javascript">// Al visitar la página del carrito
 dataLayer.push({
   event: 'view_cart',
   ecommerce: {
     currency: 'CLP',
-    value: 60000, // Valor total del carrito
+    value: 60000,
     items: [
       { item_id: 'SKU1', item_name: 'Camisa Lino', price: 25000, item_category: 'Camisas', quantity: 1 },
       { item_id: 'SKU2', item_name: 'Pantalón Cargo', price: 35000, item_category: 'Pantalones', quantity: 1 }
-      // ... todos los items del carrito
     ]
   }
 });</code></pre>
-                                        <p><strong>Iniciar Checkout (<code>begin_checkout</code>):</strong></p>
-                                        <pre><code class="language-javascript">// Al iniciar el proceso de pago
+                                            <p><strong>Iniciar Checkout (<code>begin_checkout</code>):</strong></p>
+                                            <pre><code class="language-javascript">// Al iniciar el proceso de pago
 dataLayer.push({
   event: 'begin_checkout',
   ecommerce: {
     currency: 'CLP',
-    value: 60000, // Valor total al iniciar checkout
+    value: 60000,
     items: [ /* Array de items igual que en view_cart */ ]
-    // coupon: 'DESCUENTO10' // Opcional
   }
 });</code></pre>
-                                         <p><strong>Compra (<code>purchase</code>):</strong></p>
-                                        <pre><code class="language-javascript">// En la página de agradecimiento/confirmación de compra
+                                            <p><strong>Compra (<code>purchase</code>):</strong></p>
+                                            <pre><code class="language-javascript">// En la página de agradecimiento/confirmación de compra
 dataLayer.push({
   event: 'purchase',
   ecommerce: {
-    transaction_id: 'T12345', // ID único de la transacción
-    affiliation: 'Sitio Web', // Opcional
-    value: 58500, // Valor total (incluyendo impuestos y envío, menos descuentos)
+    transaction_id: 'T12345',
+    value: 58500,
     tax: 9345,
     shipping: 4155,
     currency: 'CLP',
-    coupon: 'DESCUENTO10', // Opcional
     items: [ /* Array de items comprados */ ]
   }
 });</code></pre>`;
-            }
+                }
 
-            // 4. Custom Events - Updated with Parameters
-            if (keyActions.length > 0) {
-                recommendationsHTML += `<h5>4. Eventos Personalizados para Acciones Clave</h5>
-                                        <p>Para las acciones clave que especificaste, usa eventos personalizados. Incluye los parámetros relevantes que definiste:</p>`;
+                // 4. Custom Events
+                if (keyActions.length > 0) {
+                    recommendationsHTML += `<h5>4. Eventos Personalizados para Acciones Clave</h5>
+                                            <p>Para las acciones clave que especificaste, usa eventos personalizados. Incluye los parámetros relevantes que definiste:</p>`;
+                    keyActions.forEach(eventName => {
+                        const params = keyParamsMap.get(eventName);
+                        recommendationsHTML += `<p><strong>Evento: <code>${eventName}</code></strong></p>
+                                                <pre><code class="language-javascript">dataLayer.push({
+  'event': '${eventName}'`;
+                        if (params && params.length > 0) {
+                            params.forEach(param => {
+                                recommendationsHTML += `,\n  '${param}': 'VALOR_DINAMICO'`;
+                            });
+                        } else {
+                            recommendationsHTML += `,
+  // 'parametro_ejemplo': 'valor_ejemplo'`;
+                        }
+                        recommendationsHTML += `\n});</code></pre>`;
+                    });
+                    recommendationsHTML += `<p class="text-xs text-gray-500 mt-2">Recuerda crear etiquetas de Evento GA4 en GTM para cada uno de estos eventos personalizados, usando un activador de "Evento Personalizado" que coincida con el valor de la clave 'event'. <strong>Registra todos los parámetros personalizados</strong> (ej. ${Array.from(keyParamsMap.values()).flat().map(p => `'${p}'`).join(', ') || "'parametro_ejemplo'"}) como Dimensiones Personalizadas (o Métricas) de Evento en GA4.</p>`;
+                }
 
-                keyActions.forEach(eventName => {
-                    const params = keyParamsMap.get(eventName);
-                    recommendationsHTML += `<p><strong>Evento: <code>${eventName}</code></strong></p>
-                                            <pre><code class="language-javascript">dataLayer.push({
-  'event': '${eventName}'`; // Start dataLayer push
-
-                    if (params && params.length > 0) {
-                        params.forEach(param => {
-                            // Add each parameter with a placeholder value
-                            recommendationsHTML += `,\n  '${param}': 'VALOR_DINAMICO'`;
-                        });
-                    } else {
-                        recommendationsHTML += `,
-  // 'parametro_ejemplo': 'valor_ejemplo' // Añade parámetros relevantes aquí`;
-                    }
-                    recommendationsHTML += `\n});</code></pre>`; // Close dataLayer push
-                });
-
-                recommendationsHTML += `<p class="text-xs text-gray-500 mt-2">Recuerda crear etiquetas de Evento GA4 en GTM para cada uno de estos eventos personalizados, usando un activador de "Evento Personalizado" que coincida con el valor de la clave 'event'. <strong>Registra todos los parámetros personalizados</strong> (ej. ${Array.from(keyParamsMap.values()).flat().map(p => `'${p}'`).join(', ') || "'parametro_ejemplo'"}) como Dimensiones Personalizadas (o Métricas) de Evento en GA4.</p>`;
-            }
-
-            // 5. Consent Mode (Same as before)
-            recommendationsHTML += `<h5>5. Gestión del Consentimiento (Consent Mode v2)</h5>`;
-            switch (cmpOption) {
-                case 'google-certified':
-                    recommendationsHTML += `<p>Estás usando una CMP certificada por Google. Asegúrate de que:</p>
-                                            <ol class="list-decimal list-inside ml-4 text-sm">
-                                                <li>La CMP esté configurada para integrarse con el Consent Mode de Google.</li>
-                                                <li>La CMP envíe los estados de consentimiento (<code>default</code> y <code>update</code>) ANTES de que se disparen las etiquetas de Google (GA4, Google Ads).</li>
-                                                <li>En GTM, la opción "Habilitar descripción general del consentimiento" esté activada en la Configuración del Contenedor.</li>
-                                                <li>Tus etiquetas de Google (GA4 Config, GA4 Event, Ads Conversion, etc.) tengan la comprobación de consentimiento integrada adecuada (normalmente "No se requiere consentimiento adicional" ya que la CMP lo gestiona).</li>
-                                                <li>Verifica la implementación usando el modo Preview de GTM (pestaña Consent) y GA4 DebugView.</li>
-                                            </ol>`;
-                    break;
-                case 'other':
-                    recommendationsHTML += `<p>Estás usando una CMP no certificada o una solución personalizada. Necesitarás implementar manualmente los comandos de Consent Mode v2:</p>
-                                            <ol class="list-decimal list-inside ml-4 text-sm">
-                                                <li><strong>Implementar Estado Default:</strong> ANTES del snippet de GTM (o GA4) en el <code>&lt;head&gt;</code>, define el estado de consentimiento por defecto (normalmente 'denied' para la mayoría de las regiones con GDPR/similares):</li>
-                                                <pre><code class="language-javascript">window.dataLayer = window.dataLayer || [];
+                // 5. Consent Mode
+                recommendationsHTML += `<h5>5. Gestión del Consentimiento (Consent Mode v2)</h5>`;
+                switch (cmpOption) {
+                    case 'google-certified':
+                        recommendationsHTML += `<p>Estás usando una CMP certificada por Google. Asegúrate de que:</p>
+                                                <ol class="list-decimal list-inside ml-4 text-sm">
+                                                    <li>La CMP esté configurada para integrarse con el Consent Mode de Google.</li>
+                                                    <li>La CMP envíe los estados de consentimiento (<code>default</code> y <code>update</code>) ANTES de que se disparen las etiquetas de Google (GA4, Google Ads).</li>
+                                                    <li>En GTM, la opción "Habilitar descripción general del consentimiento" esté activada en la Configuración del Contenedor.</li>
+                                                    <li>Tus etiquetas de Google (GA4 Config, GA4 Event, Ads Conversion, etc.) tengan la comprobación de consentimiento integrada adecuada (normalmente "No se requiere consentimiento adicional" ya que la CMP lo gestiona).</li>
+                                                    <li>Verifica la implementación usando el modo Preview de GTM (pestaña Consent) y GA4 DebugView.</li>
+                                                </ol>`;
+                        break;
+                    case 'other':
+                        recommendationsHTML += `<p>Estás usando una CMP no certificada o una solución personalizada. Necesitarás implementar manualmente los comandos de Consent Mode v2:</p>
+                                                <ol class="list-decimal list-inside ml-4 text-sm">
+                                                    <li><strong>Implementar Estado Default:</strong> ANTES del snippet de GTM (o GA4) en el <code>&lt;head&gt;</code>, define el estado de consentimiento por defecto (normalmente 'denied' para la mayoría de las regiones con GDPR/similares):</li>
+                                                    <pre><code class="language-javascript">window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 
 gtag('consent', 'default', {
@@ -1344,66 +1370,104 @@ gtag('consent', 'default', {
   'ad_user_data': 'denied',
   'ad_personalization': 'denied',
   'analytics_storage': 'denied',
-  'wait_for_update': 500 // Opcional: milisegundos para esperar update antes de enviar pings sin estado
+  'wait_for_update': 500
 });</code></pre>
-                                                <li><strong>Implementar Estado Update:</strong> Cuando el usuario interactúe con tu banner/mecanismo de consentimiento, actualiza el estado basado en su elección:</li>
-                                                 <pre><code class="language-javascript">// Ejemplo si el usuario acepta todo
+                                                    <li><strong>Implementar Estado Update:</strong> Cuando el usuario interactúe con tu banner/mecanismo de consentimiento, actualiza el estado basado en su elección:</li>
+                                                    <pre><code class="language-javascript">// Ejemplo si el usuario acepta todo
 gtag('consent', 'update', {
   'ad_storage': 'granted',
   'ad_user_data': 'granted',
   'ad_personalization': 'granted',
   'analytics_storage': 'granted'
 });</code></pre>
-                                                <li>Asegúrate de que estos comandos se ejecuten correctamente y que las etiquetas en GTM respeten el estado de consentimiento (configurando las comprobaciones de consentimiento necesarias en cada etiqueta).</li>
-                                                <li>Verifica rigurosamente con GTM Preview y GA4 DebugView.</li>
-                                            </ol>`;
-                    break;
-                case 'no':
-                    recommendationsHTML += `<p class="text-red-700 font-semibold">¡Atención! Es highly recomendable implementar una solución de gestión de consentimiento (CMP) que soporte Consent Mode v2 para cumplir con las regulaciones de privacidad (GDPR, etc.) y permitir la modelación de datos en GA4 para usuarios no consentidos.</p>
-                                             <p>Considera usar una <a href="https://cmppartnerprogram.withgoogle.com/" target="_blank" class="text-mw-green underline">CMP certificada por Google</a> para una integración más sencilla.</p>`;
-                    break;
-            }
-
-            // 6. Server-Side Tagging (Same as before)
-            if (useSST) {
-                recommendationsHTML += `<h5>6. Consideraciones para Server-Side Tagging (SST)</h5>
-                                        <p>Ya que planeas usar SST:</p>
-                                        <ol class="list-decimal list-inside ml-4 text-sm">
-                                            <li>Configura tu contenedor de servidor GTM en Google Cloud (Cloud Run recomendado) o un proveedor similar.</li>
-                                            <li>Apunta un subdominio personalizado (ej. <code>medicion.tusitio.com</code>) a tu servidor de etiquetado.</li>
-                                            <li>En tu contenedor GTM **Web**:</li>
-                                                <ul class="list-disc list-inside ml-4">
-                                                    <li>En tu etiqueta "GA4 Config", activa la opción "Send to server container".</li>
-                                                    <li>Introduce la URL de tu servidor de etiquetado (tu subdominio personalizado).</li>
-                                                </ul>
-                                            <li>En tu contenedor GTM **Server**:</li>
-                                                 <ul class="list-disc list-inside ml-4">
-                                                    <li>Configura el Cliente "GA4" para recibir las solicitudes del contenedor web.</li>
-                                                    <li>Crea las etiquetas necesarias para reenviar los datos a los endpoints finales (ej. una etiqueta GA4 para enviar a Google Analytics, etiqueta Facebook CAPI, etc.).</li>
-                                                </ul>
-                                            <li>Recuerda que los dataLayer push se implementan en el lado del cliente (navegador) como se describió antes, pero la etiqueta GA4 Config los enviará al contenedor del servidor en lugar de directamente a Google.</li>
-                                        </ol>`;
-            }
-
-            // 7. Final Recommendations (Same as before)
-            recommendationsHTML += `<h5>7. Recomendaciones Finales</h5>
-                                    <ul class="list-disc list-inside ml-4 text-sm space-y-1">
-                                        <li><strong>Documentación Interna:</strong> Mantén un documento detallado (ej. Google Sheet, Confluence) con tu plan de medición, definiciones de eventos, parámetros, y configuración de GTM.</li>
-                                        <li><strong>Pruebas Rigurosas:</strong> Usa GTM Preview Mode y GA4 DebugView extensivamente antes de publicar cualquier cambio.</li>
-                                        <li><strong>Registro en GA4:</strong> No olvides registrar todas las dimensiones y métricas personalizadas que uses en tus eventos dentro de la interfaz de GA4 (Administrar > Definiciones Personalizadas).</li>
-                                        <li><strong>Consistencia:</strong> Mantén la nomenclatura y estructura consistentes en tu Data Layer y configuración de GTM.</li>
-                                    </ul>`;
-
-
-            outputDiv.innerHTML = recommendationsHTML;
-            // Ensure smooth scroll works reliably
-            setTimeout(() => {
-                const outputElement = document.getElementById('output-documentation');
-                if (outputElement) {
-                    outputElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                                    <li>Asegúrate de que estos comandos se ejecuten correctamente y que las etiquetas en GTM respeten el estado de consentimiento (configurando las comprobaciones de consentimiento necesarias en cada etiqueta).</li>
+                                                    <li>Verifica rigurosamente con GTM Preview y GA4 DebugView.</li>
+                                                </ol>`;
+                        break;
+                    case 'no':
+                        recommendationsHTML += `<p class="text-red-700 font-semibold">¡Atención! Es altamente recomendable implementar una solución de gestión de consentimiento (CMP) que soporte Consent Mode v2 para cumplir con las regulaciones de privacidad (GDPR, etc.) y permitir la modelación de datos en GA4 para usuarios no consentidos.</p>
+                                                <p>Considera usar una <a href="https://cmppartnerprogram.withgoogle.com/" target="_blank" class="text-mw-green underline">CMP certificada por Google</a> para una integración más sencilla.</p>`;
+                        break;
                 }
-            }, 100); // Small delay to ensure rendering before scrolling
-        });
+
+                // 6. Server-Side Tagging
+                if (useSST) {
+                    recommendationsHTML += `<h5>6. Consideraciones para Server-Side Tagging (SST)</h5>
+                                            <p>Ya que planeas usar SST:</p>
+                                            <ol class="list-decimal list-inside ml-4 text-sm">
+                                                <li>Configura tu contenedor de servidor GTM en Google Cloud (Cloud Run recomendado) o un proveedor similar.</li>
+                                                <li>Apunta un subdominio personalizado (ej. <code>medicion.tusitio.com</code>) a tu servidor de etiquetado.</li>
+                                                <li>En tu contenedor GTM **Web**:</li>
+                                                    <ul class="list-disc list-inside ml-4">
+                                                        <li>En tu etiqueta "GA4 Config", activa la opción "Send to server container".</li>
+                                                        <li>Introduce la URL de tu servidor de etiquetado (tu subdominio personalizado).</li>
+                                                    </ul>
+                                                <li>En tu contenedor GTM **Server**:</li>
+                                                    <ul class="list-disc list-inside ml-4">
+                                                        <li>Configura el Cliente "GA4" para recibir las solicitudes del contenedor web.</li>
+                                                        <li>Crea las etiquetas necesarias para reenviar los datos a los endpoints finales (ej. una etiqueta GA4 para enviar a Google Analytics, etiqueta Facebook CAPI, etc.).</li>
+                                                    </ul>
+                                                <li>Recuerda que los dataLayer push se implementan en el lado del cliente (navegador) como se describió antes, pero la etiqueta GA4 Config los enviará al contenedor del servidor en lugar de directamente a Google.</li>
+                                            </ol>`;
+                }
+
+                // 7. Final Recommendations
+                recommendationsHTML += `<h5>7. Recomendaciones Finales</h5>
+                                        <ul class="list-disc list-inside ml-4 text-sm space-y-1">
+                                            <li><strong>Documentación Interna:</strong> Mantén un documento detallado (ej. Google Sheet, Confluence) con tu plan de medición, definiciones de eventos, parámetros, y configuración de GTM.</li>
+                                            <li><strong>Pruebas Rigurosas:</strong> Usa GTM Preview Mode y GA4 DebugView extensivamente antes de publicar cualquier cambio.</li>
+                                            <li><strong>Registro en GA4:</strong> No olvides registrar todas las dimensiones y métricas personalizadas que uses en tus eventos dentro de la interfaz de GA4 (Administrar > Definiciones Personalizadas).</li>
+                                            <li><strong>Consistencia:</strong> Mantén la nomenclatura y estructura consistentes en tu Data Layer y configuración de GTM.</li>
+                                        </ul>`;
+
+                outputDiv.innerHTML = recommendationsHTML;
+                setTimeout(() => {
+                    const outputElement = document.getElementById('output-documentation');
+                    if (outputElement) {
+                        outputElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            });
+        }
+
+        // --- Download Documentation Button Logic ---
+        const downloadPdfBtn = document.getElementById('download-pdf-btn');
+        const copyTextBtn = document.getElementById('copy-text-btn');
+        const downloadInstructionsDiv = document.getElementById('download-instructions');
+
+        if (downloadPdfBtn) {
+            downloadPdfBtn.addEventListener('click', () => {
+                const guideContent = document.getElementById('output-documentation').innerHTML;
+                if (guideContent.includes("Guía de Marcación Personalizada")) {
+                    downloadInstructionsDiv.classList.remove('hidden');
+                    alert("Simulación de descarga PDF de la Guía:\n\nPara guardar la guía generada como PDF, usa la función 'Imprimir' de tu navegador (Ctrl+P o Cmd+P) y selecciona 'Guardar como PDF' como destino. Asegúrate de que solo la guía esté visible o selecciona las páginas correspondientes si es necesario.");
+                } else {
+                    alert("Por favor, primero genera la Guía de Marcación en la Sección 6.");
+                }
+            });
+        }
+
+        if (copyTextBtn) {
+            copyTextBtn.addEventListener('click', () => {
+                const guideContentElement = document.getElementById('output-documentation');
+                const guideText = guideContentElement.innerText;
+
+                if (guideContentElement.innerHTML.includes("Guía de Marcación Personalizada") && guideText.trim() !== "Completa el formulario y haz clic en \"Generar Guía de Marcación\" para ver las recomendaciones.") {
+                    downloadInstructionsDiv.classList.remove('hidden');
+                    try {
+                        navigator.clipboard.writeText(guideText).then(() => {
+                            alert("Texto de la Guía de Marcación copiado al portapapeles.\n\nPuedes pegarlo en un editor de texto.");
+                        }).catch(err => {
+                            alert("No se pudo copiar el texto automáticamente. Por favor, selecciona y copia manualmente el contenido de la guía.\n\nError: " + err);
+                        });
+                    } catch (e) {
+                        alert("No se pudo copiar el texto automáticamente. Por favor, selecciona y copia manualmente el contenido de la guía.");
+                    }
+                } else {
+                    alert("Por favor, primero genera la Guía de Marcación en la Sección 6 para poder copiar su contenido.");
+                }
+            });
+        }
 
     </script>
 
