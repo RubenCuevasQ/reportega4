@@ -37,7 +37,7 @@
         }
 
         .collapse-content.open {
-            max-height: 3500px;
+            max-height: 4000px;
             /* Increased max-height for potentially longer content */
             transition: max-height 0.7s ease-in;
         }
@@ -164,7 +164,7 @@
 
         /* Download options panel */
         #download-options-panel {
-            /* This is part of seccion7 now */
+            /* This is part of seccion8 now */
             @apply mt-4 p-4 border border-gray-300 rounded-md bg-gray-50 shadow;
         }
 
@@ -225,6 +225,9 @@
                         <li><a href="#seccion6"
                                 class="nav-link block py-1 px-2 text-gray-600 hover:bg-mw-green-light hover:text-mw-green rounded">6.
                                 Novedades Google (Mayo 2025)</a></li>
+                        <li><a href="#seccion7"
+                                class="nav-link block py-1 px-2 text-gray-600 hover:bg-mw-green-light hover:text-mw-green rounded">7.
+                                Roadmap GA (H1 2025)</a></li>
                     </ul>
                 </nav>
             </aside>
@@ -312,8 +315,7 @@
                             <textarea id="key-parameters" name="key-parameters" rows="3"
                                 placeholder="Formato: nombre_evento:param1,param2; otro_evento:param3,param4"></textarea>
                             <p class="text-xs text-gray-500 mt-1">Separa eventos con ';' y parámetros con ','. Ejemplo:
-                                <code>reproduccion_video:video_title,video_percent; descarga_pdf:file_name</code>
-                            </p>
+                                <code>reproduccion_video:video_title,video_percent; descarga_pdf:file_name</code></p>
                         </div>
                         <div>
                             <button type="button" id="generate-btn"
@@ -1011,7 +1013,278 @@
                     </div>
                 </section>
 
-                <section id="seccion7" class="mt-10 p-6 bg-gray-200 rounded-lg shadow-md hidden">
+                <!-- NEW Section 7: Google Analytics Roadmap (H1 2025 & Updates) - Initially Hidden -->
+                <section id="seccion7" class="main-content-section mb-8 p-6 bg-white rounded-lg shadow-md hidden">
+                    <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-mw-green">7. Roadmap de Google Analytics
+                        (H1 2025 y Actualizaciones)</h2>
+                    <p class="text-xs text-gray-500 mb-1">Última actualización del roadmap: 27 de Mayo de 2025.</p>
+                    <p class="text-gray-600 mb-6">Esta sección representa áreas en las que Google Analytics planea
+                        invertir. El calendario y los detalles están sujetos a cambios. La información es para Partners
+                        y debe manejarse como confidencial bajo NDA con Google.</p>
+
+                    <div class="space-y-6">
+                        <!-- Visión Actual de GA -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
+                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
+                                <span>Visión Actual de GA: Mejorar Calidad de Datos, Consistencia de Conversión y
+                                    Usabilidad (2025)</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
+                            <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                <p>En 2025, el enfoque será mejorar la calidad de los datos, impulsar una medición de
+                                    conversión consistente en las plataformas de Google y mejorar la experiencia general
+                                    del usuario.</p>
+                                <div>
+                                    <strong>Mejorar atribución con calidad de datos y estabilidad de plataforma
+                                        mejoradas:</strong>
+                                    <ul class="list-disc list-inside ml-4 mt-1">
+                                        <li><strong>Completitud de Datos Mejorada:</strong> Soluciones para llenar
+                                            automáticamente vacíos de datos, reduciendo problemas de atribución y
+                                            mejorando la accionabilidad de los datos.</li>
+                                        <li><strong>Herramientas de Diagnóstico:</strong> Identificar y resolver errores
+                                            de implementación de forma independiente.</li>
+                                        <li><strong>Presentación de Datos Más Clara:</strong> Mejorar etiquetas en la UI
+                                            para señalar cualquier vacío de datos o retrasos en la atribución.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Impulsar medición de conversión consistente entre plataformas de
+                                        Google:</strong>
+                                    <ul class="list-disc list-inside ml-4 mt-1">
+                                        <li><strong>Flujo de Trabajo Simplificado:</strong> Configuración y gestión de
+                                            conversiones más fáciles para anunciantes.</li>
+                                        <li><strong>Datos Consistentes:</strong> Reducir discrepancias en la medición y
+                                            datos de conversión.</li>
+                                        <li><strong>ROI Cross-Channel Mejorado:</strong> Desarrollar insights más
+                                            robustos sobre cómo los diferentes canales de marketing contribuyen a las
+                                            conversiones.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Hacer de Google Analytics una herramienta que nuestros usuarios
+                                        amen:</strong>
+                                    <ul class="list-disc list-inside ml-4 mt-1">
+                                        <li><strong>Feedback de Experiencia de Usuario:</strong> Recopilación activa de
+                                            feedback para identificar puntos débiles y priorizar mejoras.</li>
+                                        <li><strong>Funcionalidades y Características Mejoradas:</strong>
+                                            Actualizaciones y mejoras continuas para abordar directamente las
+                                            necesidades de usabilidad.</li>
+                                        <li><strong>Optimización Basada en Datos:</strong> Medición constante del
+                                            impacto de las mejoras de usabilidad.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visión Futura de GA: Roadmap para el Éxito -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
+                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
+                                <span>Visión Futura de GA: Principios Rectores y Características Clave</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
+                            <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                <p>El futuro de Google Analytics se moldea con cinco principios rectores, priorizando
+                                    características para medir, analizar y activar datos de manera más efectiva:</p>
+                                <ol class="list-decimal list-inside ml-4 space-y-2">
+                                    <li>
+                                        <strong>Medir el viaje completo (Measure entire journey):</strong>
+                                        <ul class="list-disc list-inside ml-6">
+                                            <li>Importación Automatizada de Datos de Costo: Integración con Reddit, Snap
+                                                y Pinterest.</li>
+                                            <li>Importación de Datos de Costo: Fuentes de datos expandidas, aceptación
+                                                de datos Geo/Dispositivo en MP, Importación de Datos Personalizados de
+                                                Ítem.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Excelencia en la experiencia de reportería (Experience reporting
+                                            excellence):</strong>
+                                        <ul class="list-disc list-inside ml-6">
+                                            <li>Expansión de Filtros: Tipos de concordancia.</li>
+                                            <li>Anotaciones.</li>
+                                            <li>Dimensiones Personalizadas a Nivel de Ítem.</li>
+                                            <li>Métricas Personalizadas a Nivel de Ítem.</li>
+                                            <li>Nueva Instantánea de Informes (Report Snapshot).</li>
+                                            <li>Insights Generados: Informes detallados e informes de vista general.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Aprovechar la IA (Harness AI):</strong>
+                                        <ul class="list-disc list-inside ml-6">
+                                            <li>Google Analytics Chat.</li>
+                                            <li>Asistente de Tareas (Task Assistant).</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Optimizar la inversión en medios (Optimize media investment):</strong>
+                                        <ul class="list-disc list-inside ml-6">
+                                            <li>Herramientas de Presupuestación de GA: Ritmo y Proyecciones,
+                                                Planificador de Escenarios.</li>
+                                            <li>GA para Generación de Leads: Informes por defecto y Audiencias
+                                                Sugeridas.</li>
+                                            <li>Datos de Audiencia en Ads para NCA Pmax.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Construir medición duradera (Build durable measurement):</strong>
+                                        <ul class="list-disc list-inside ml-6">
+                                            <li>Plan 2025 para Calidad de Datos Mejorada.</li>
+                                            <li>Crear y Gestionar Conversiones en GA.</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Roadmap de Funcionalidades Detallado -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
+                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
+                                <span>Roadmap Detallado de Funcionalidades GA (Q2 2025 - H2 2025)</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
+                            <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                <p class="font-semibold">Recolección de Datos e Importación:</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li><strong>Q2 2025:</strong> Crear y Gestionar Conversiones en GA; Aceptar datos
+                                        Geo en payload de Measurement Protocol; Importación de Datos de Ítem
+                                        Personalizados; Aceptar datos de Dispositivo en payload de Measurement Protocol;
+                                        Importación Automatizada de Datos de Costo: Integración con Reddit; Importación
+                                        de Datos de Costo: Fuentes de Datos Expandidas.</li>
+                                    <li><strong>H2 2025:</strong> Importación Automatizada de Datos de Costo:
+                                        Integraciones con Pinterest y Snap.</li>
+                                </ul>
+                                <p class="font-semibold mt-2">Dimensiones y Métricas:</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li><strong>Q2 2025:</strong> Dimensiones Personalizadas a Nivel de Ítem; Eventos
+                                        Clave Automáticos para Generación de Leads.</li>
+                                    <li><strong>H2 2025:</strong> Métricas Personalizadas a Nivel de Ítem.</li>
+                                </ul>
+                                <p class="font-semibold mt-2">Reportería:</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li><strong>Q2 2025:</strong> Expansión de Filtros: Tipos de Concordancia (Fase 1
+                                        Lanzada, Fase 2 para Q2 2025); GA para Generación de Leads: Informes por Defecto
+                                        y Audiencias Sugeridas; Nueva Instantánea de Informes (Report Snapshot - Lanzado
+                                        Abril 2025).</li>
+                                    <li><strong>Q3 2025:</strong> Insights Generados - Informes de Vista General.</li>
+                                    <li><strong>H2 2025:</strong> Herramientas de Presupuestación de GA: Informe de
+                                        Ritmo y Proyecciones; Herramientas de Presupuestación de GA: Planificador de
+                                        Escenarios; Resumen de Insights en la Página Principal (Home).</li>
+                                </ul>
+                                <p class="font-semibold mt-2">Integraciones:</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li><strong>Q3 2025:</strong> Datos de Audiencia en Ads para NCA Pmax.</li>
+                                </ul>
+                                <p class="font-semibold mt-2">Inteligencia:</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li><strong>Q3 2025:</strong> Asistente de Tareas (Task Assistant).</li>
+                                    <li><strong>H2 2025:</strong> Google Analytics Chat.</li>
+                                </ul>
+                                <p class="font-semibold mt-2">Solo 360 - Enterprise:</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li><strong>Q2 2025:</strong> Exportación Diaria Fresca de BQ con SLA;
+                                        Sincronización de Dimensiones y Métricas Personalizadas desde Propiedades Fuente
+                                        a Subpropiedades.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Actualizaciones de Lanzamiento 2025 -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
+                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
+                                <span>Actualizaciones de Lanzamiento 2025 (Cambios de Fechas)</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
+                            <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                <ul class="list-disc list-inside ml-4 space-y-1">
+                                    <li><strong>Importación de Datos: Importación de Datos Personalizados de
+                                            Ítem:</strong> Movido a H1 2025 (originalmente Q3'24) debido a congelaciones
+                                        de código.</li>
+                                    <li><strong>Exportación Diaria Fresca de BQ con SLA:</strong> H1 2025. Ya disponible
+                                        para todas las propiedades 360 (Open Beta). SLA específico en progreso.</li>
+                                    <li><strong>Importación de Datos de Costo: Fuentes Expandidas:</strong> Movido a Q2
+                                        2025 (originalmente en alfa) para abordar feedback del alfa.</li>
+                                    <li><strong>GA para Generación de Leads: Informes por Defecto y Audiencias
+                                            Sugeridas:</strong> Movido a Q2 2025 (originalmente Q1'25).</li>
+                                    <li><strong>Dimensiones Personalizadas a Nivel de Ítem:</strong> Movido a Q2 2025
+                                        (originalmente Q1'25) debido a otras prioridades (ej. confianza de datos).</li>
+                                    <li><strong>Google Analytics Chat:</strong> Movido a H2 2025 (originalmente H1'25).
+                                    </li>
+                                    <li><strong>Métricas Personalizadas a Nivel de Ítem:</strong> Movido a H2 2025
+                                        (originalmente H1'25).</li>
+                                    <li><strong>Herramientas de Presupuestación de GA: Informe de Ritmo y
+                                            Proyecciones:</strong> Movido a H2 2025 (originalmente Q4'24) después de la
+                                        finalización del Alfa.</li>
+                                    <li><strong>Datos de Audiencia en Ads para NCA PMax:</strong> Q3 2025 (parcialmente
+                                        lanzado en Q4'24, características adicionales en Q2 y Q3'25).</li>
+                                    <li><strong>Métricas Predictivas de Leads en GA:</strong> Calendario Desconocido (PM
+                                        & Ingeniería priorizando otras características de Lead Gen).</li>
+                                    <li><strong>API de Importación de Datos:</strong> Calendario Desconocido
+                                        (Despriorizado basado en otras solicitudes de alta clasificación).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Mejoras en Calidad de Datos (Plan 2025) -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
+                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
+                                <span>Plan 2025 para Mejorar la Calidad de los Datos</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
+                            <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                <p><strong>Nueva etiqueta "(data not available)":</strong> Lanzada en Marzo 2025 (Q1).
+                                    Reemplaza el tráfico incorrectamente asignado a Directo, denotando un problema que
+                                    el usuario no puede arreglar (ej. retrasos de atribución). Incluye Diagnósticos y
+                                    Anotaciones Generadas por el Sistema.</p>
+                                <p><strong>Recategorización de tráfico (orgánico) a (not set):</strong> En Diseño (Q2
+                                    2025). Para categorizar más precisamente campañas cuando la recuperación automática
+                                    de dimensiones desde la plataforma publicitaria no es posible, pero existe un ID de
+                                    publicidad de Google. Ayuda a mitigar la mala atribución de campañas pagadas de
+                                    Google a Orgánico.</p>
+                                <p><strong>Mejorar precisión de reportería con identificadores agregados:</strong> En
+                                    Despliegue (Q2 2025, Alfa completada). Lanza nuevos identificadores agregados para
+                                    mantener la precisión de los informes en instancias donde GA no puede recuperar
+                                    automáticamente información de campaña de Ads usando GCLID. Mitiga la
+                                    sobre-atribución de canales Pagados de Google a Orgánico.</p>
+                                <p><strong>Anotaciones Generadas por el Sistema:</strong> Lanzado en Marzo 2025 (Q1).
+                                    Informan a los usuarios sobre cambios en los datos. Visibles para todos los usuarios
+                                    en una propiedad. No disponibles en Exploraciones y no cuentan contra las cuotas de
+                                    anotaciones de usuario.</p>
+                                <p><strong>Reportería Intradía Mejorada de SA360:</strong> En Pruebas y Verificación (Q2
+                                    2025). Para seguimiento de anuncios mejorado y atribución de tráfico de SA360, se
+                                    actualizan los sistemas para capturar automáticamente atributos de campaña y clic en
+                                    reportería intradía, eliminando el retraso anterior de 48 horas.</p>
+                                <p><strong>Reclasificación de Tráfico de YouTube DV360:</strong> En Pruebas y
+                                    Verificación (Q3 2025). Actualizará el Formato Creativo a "Video" para clics de
+                                    DV360 desde youtube.com, estableciendo correctamente el Agrupamiento de Canales por
+                                    Defecto (DCG) a "Paid Video".</p>
+                                <p><strong>Diagnóstico de Nueva etiqueta "(data not available)":</strong> Lanzado en
+                                    Marzo 2025 (Q1). Aborda instancias donde faltan datos porque GA no ha
+                                    recibido/procesado información para dimensiones de fuente de tráfico. Un icono de
+                                    triángulo y explicación prevendrán preocupaciones innecesarias.</p>
+                                <p><strong>Diagnóstico de "(not set)":</strong> Lanzado en Marzo 2025 (Q1). Evoluciona
+                                    el placeholder "(not set)" para indicar específicamente instancias donde el usuario
+                                    puede tomar acción para resolver datos faltantes, con un indicador visual y enlace a
+                                    un artículo del Centro de Ayuda.</p>
+                                <p><strong>Diagnóstico de Evento `session_start` Faltante:</strong> Lanzado en Marzo
+                                    2025 (Q1). Aborda el problema de eventos `session_start` faltantes debido a una
+                                    implementación defectuosa de gestión de consentimiento, ayudando a los usuarios a
+                                    identificar y arreglar el problema.</p>
+                                <p><strong>Diagnóstico de Implementación Incorrecta de User-ID:</strong> En Diseño
+                                    (TBD). Aborda el problema de numerosos usuarios agrupados bajo un único User-ID por
+                                    defecto. Una notificación emergente alertará sobre estos User-IDs problemáticos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Download Documentation Section - Initially Hidden (now seccion8) -->
+                <section id="seccion8" class="mt-10 p-6 bg-gray-200 rounded-lg shadow-md hidden">
                     <h2 class="text-xl font-semibold mb-4 text-mw-green-darker">Descargar Guía de Marcación Generada
                     </h2>
                     <p class="text-gray-700 mb-4">Utiliza las siguientes opciones para guardar el contenido de la guía
@@ -1082,7 +1355,7 @@
             // Scroll to the shown section
             const targetElement = document.getElementById(sectionIdToShow);
             if (targetElement) {
-                setTimeout(() => targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50); // Added small delay for smoother scroll after content visibility change
+                setTimeout(() => targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
             }
         }
 
@@ -1092,11 +1365,10 @@
             const icon = trigger.querySelector('.collapsible-icon');
             const container = trigger.closest('.collapsible-container');
 
-            // Initialize icons for sub-collapsibles
             if (content && content.classList.contains('open')) {
                 if (icon) icon.textContent = '-';
                 if (container) container.classList.add('border-mw-green', 'border-2');
-            } else if (icon) { // Ensure all icons are '+' if not open
+            } else if (icon) {
                 icon.textContent = '+';
             }
 
@@ -1123,7 +1395,6 @@
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
                 showMainSection(targetId);
-                // Ensure download section is hidden when navigating away from generator output (seccion1)
                 if (targetId !== 'seccion1' && downloadSection) {
                     downloadSection.classList.add('hidden');
                     if (downloadInstructionsDiv) downloadInstructionsDiv.classList.add('hidden');
@@ -1133,15 +1404,15 @@
 
         // --- Initial State ---
         document.addEventListener('DOMContentLoaded', () => {
-            showMainSection('seccion1'); // Show generator (new seccion1) by default
+            showMainSection('seccion1');
         });
 
 
         // --- Tagging Generator Logic ---
         const generateBtn = document.getElementById('generate-btn');
         const outputDiv = document.getElementById('output-documentation');
-        const downloadSection = document.getElementById('seccion7');
-        const downloadInstructionsDiv = document.getElementById('download-instructions'); // Single declaration here
+        const downloadSection = document.getElementById('seccion8');
+        const downloadInstructionsDiv = document.getElementById('download-instructions');
 
 
         function parseParameters(paramString) {
@@ -1474,10 +1745,9 @@ gtag('consent', 'update', {
         // --- Download Documentation Button Logic ---
         const downloadPdfBtn = document.getElementById('download-pdf-btn');
         const copyTextBtn = document.getElementById('copy-text-btn');
-        // const downloadInstructionsDiv = document.getElementById('download-instructions'); // This line was the duplicate and is removed. The one below is kept.
+        // const downloadInstructionsDiv is already declared above with downloadSection
 
         if (downloadPdfBtn) {
-            const downloadInstructionsDiv = document.getElementById('download-instructions'); // Correct single declaration
             downloadPdfBtn.addEventListener('click', () => {
                 const guideContent = document.getElementById('output-documentation').innerHTML;
                 if (guideContent.includes("Guía de Marcación Personalizada")) {
@@ -1491,7 +1761,6 @@ gtag('consent', 'update', {
         }
 
         if (copyTextBtn) {
-            const downloadInstructionsDiv = document.getElementById('download-instructions'); // Correct single declaration
             copyTextBtn.addEventListener('click', () => {
                 const guideContentElement = document.getElementById('output-documentation');
                 const guideText = guideContentElement.innerText;
