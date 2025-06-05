@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte Interactivo: Google Analytics 4 - Mentalidad Web Chile</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom Styles */
@@ -36,8 +37,8 @@
         }
 
         .collapse-content.open {
-            max-height: 3000px;
-            /* Increased max-height again */
+            max-height: 3500px;
+            /* Increased max-height for potentially longer content */
             transition: max-height 0.7s ease-in;
         }
 
@@ -179,6 +180,7 @@
             @apply text-mw-green hover:underline;
         }
     </style>
+    <!-- Preload Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -187,10 +189,11 @@
 <body class="bg-gray-100 text-gray-800">
 
     <div class="container mx-auto p-4 lg:p-8">
+        <!-- Header -->
         <header class="mb-8 p-6 bg-mw-dark-green rounded-lg shadow-md flex items-center justify-between">
             <div>
                 <h1 class="text-2xl lg:text-3xl font-bold text-white">Reporte Interactivo: Google Analytics 4</h1>
-                <p class="text-sm text-gray-300">Preparado por: Mentalidad Web Chile | Fecha: 12 de Mayo de 2025</p>
+                <p class="text-sm text-gray-300">Preparado por: Mentalidad Web Chile | Fecha: 5 de Junio de 2025</p>
             </div>
             <div class="text-right">
                 <img src="https://www.mentalidadweb.com/wp-content/uploads/2022/02/logomw.svg"
@@ -199,6 +202,7 @@
         </header>
 
         <div class="lg:flex lg:space-x-8">
+            <!-- Sidebar Navigation - Updated Order -->
             <aside class="w-full lg:w-1/4 mb-6 lg:mb-0">
                 <nav id="sidebar-nav" class="p-4 bg-white rounded-lg shadow-md lg:sticky-sidebar">
                     <h2 class="text-lg font-semibold mb-4 text-gray-700">Navegación</h2>
@@ -208,7 +212,7 @@
                                 Generador de Marcación</a></li>
                         <li><a href="#seccion2"
                                 class="nav-link block py-1 px-2 text-gray-600 hover:bg-mw-green-light hover:text-mw-green rounded">2.
-                                Evolución de GA</a></li>
+                                Evolución de GA y Novedades Históricas</a></li>
                         <li><a href="#seccion3"
                                 class="nav-link block py-1 px-2 text-gray-600 hover:bg-mw-green-light hover:text-mw-green rounded">3.
                                 Cambios Técnicos GA4 vs UA</a></li>
@@ -220,12 +224,14 @@
                                 Detalle Buenas Prácticas (GTM)</a></li>
                         <li><a href="#seccion6"
                                 class="nav-link block py-1 px-2 text-gray-600 hover:bg-mw-green-light hover:text-mw-green rounded">6.
-                                Novedades Google (Ene-Feb 2025)</a></li>
+                                Novedades Google (Mayo 2025)</a></li>
                     </ul>
                 </nav>
             </aside>
 
+            <!-- Main Content -->
             <main class="w-full lg:w-3/4">
+                <!-- Section 1: Tagging Generator - Now first and visible by default -->
                 <section id="seccion1" class="main-content-section mb-8 p-6 bg-white rounded-lg shadow-md">
                     <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-mw-green">1. Generador de Guía de Marcación
                         GA4/GTM</h2>
@@ -321,80 +327,171 @@
                     </div>
                 </section>
 
+                <!-- Section 2: Timeline & Historical Updates - Initially Hidden -->
                 <section id="seccion2" class="main-content-section mb-8 p-6 bg-white rounded-lg shadow-md hidden">
-                    <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-mw-green">2. Línea de Tiempo de la
-                        Evolución de Google Analytics</h2>
+                    <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-mw-green">2. Evolución de GA y Novedades
+                        Históricas</h2>
                     <div class="space-y-4">
+                        <!-- Original Evolution Content -->
                         <div class="collapsible-container border rounded-md overflow-hidden"> <button
                                 class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
-                                <span>Urchin from Google (Adquirido en 2005)</span> <span
+                                <span>Evolución General de Google Analytics</span> <span
                                     class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
-                            <div class="collapse-content p-3 border-t bg-white">
-                                <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Origen: Desarrollado por Quantified Systems (desde 1998), adquirido por Google
-                                        (2005).</li>
-                                    <li>Tecnología: Biblioteca Javascript <code>urchin.js</code>.</li>
-                                    <li>Enfoque: Análisis web basado en registros internos del servidor.</li>
-                                </ul>
+                            <div class="collapse-content p-3 border-t bg-white space-y-4">
+                                <div class="collapsible-container border rounded-md overflow-hidden"> <button
+                                        class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                                        <span>Urchin from Google (Adquirido en 2005)</span> <span
+                                            class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                    <div class="collapse-content p-3 border-t bg-white">
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                                            <li>Origen: Desarrollado por Quantified Systems (desde 1998), adquirido por
+                                                Google (2005).</li>
+                                            <li>Tecnología: Biblioteca Javascript <code>urchin.js</code>.</li>
+                                            <li>Enfoque: Análisis web basado en registros internos del servidor.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="collapsible-container border rounded-md overflow-hidden"> <button
+                                        class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                                        <span>Classic Google Analytics (2007-2009)</span> <span
+                                            class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                    <div class="collapse-content p-3 border-t bg-white">
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                                            <li>Versiones: Synchronous (2007) y Asynchronous (2009).</li>
+                                            <li>Tecnología: Biblioteca Javascript <code>ga.js</code>.</li>
+                                            <li>Avances: Introducción del seguimiento de e-commerce, mejora en
+                                                recolección y precisión de datos.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="collapsible-container border rounded-md overflow-hidden"> <button
+                                        class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                                        <span>Universal Analytics (UA) (Lanzado en 2012)</span> <span
+                                            class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                    <div class="collapse-content p-3 border-t bg-white">
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                                            <li>Contexto: Medición web centrada en escritorio, sesiones independientes y
+                                                cookies.</li>
+                                            <li>Tecnología: Biblioteca Javascript <code>analytics.js</code>.</li>
+                                            <li>Capacidades: Comprensión del usuario multidispositivo, rendimiento de
+                                                apps móviles, generación de leads y ROI.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="collapsible-container border rounded-md overflow-hidden"> <button
+                                        class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                                        <span>Google Analytics 4 (GA4) (Anunciado en Octubre 2020)</span> <span
+                                            class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                    <div class="collapse-content p-3 border-t bg-white">
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                                            <li>Rol: Sucesor de Universal Analytics.</li>
+                                            <li>Tecnología: Biblioteca Javascript <code>gtm.js</code> (generalmente vía
+                                                Google Tag Manager).</li>
+                                            <li>Paradigma: Foco en el comportamiento del usuario y modelo basado en
+                                                eventos.</li>
+                                            <li>Características Clave: Multiplataforma, opera sin dependencia exclusiva
+                                                de cookies, privacidad central, medición entre dispositivos.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="collapsible-container border rounded-md overflow-hidden"> <button
+                                        class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
+                                        <span>Transición Obligatoria a GA4 (Completada en 2023)</span> <span
+                                            class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                    <div class="collapse-content p-3 border-t bg-white">
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                                            <li>Cese de UA: Propiedades estándar dejaron de procesar datos el 1 de julio
+                                                de 2023.</li>
+                                            <li>Cese de UA 360: Propiedades 360 dejaron de procesar datos el 1 de
+                                                octubre de 2023.</li>
+                                            <li>Impacto: La migración a GA4 se volvió esencial para la continuidad de la
+                                                recolección de datos. El acceso a datos históricos de UA finalizó
+                                                aproximadamente 6 meses después del cese.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
-                                <span>Classic Google Analytics (2007-2009)</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
-                            <div class="collapse-content p-3 border-t bg-white">
-                                <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Versiones: Synchronous (2007) y Asynchronous (2009).</li>
-                                    <li>Tecnología: Biblioteca Javascript <code>ga.js</code>.</li>
-                                    <li>Avances: Introducción del seguimiento de e-commerce, mejora en recolección y
-                                        precisión de datos.</li>
-                                </ul>
+
+                        <!-- Historical Updates: Jan-Feb 2025 -->
+                        <h3 class="text-lg font-semibold mt-6 mb-3 text-mw-green-darker">Novedades Históricas
+                            (Enero-Febrero 2025)</h3>
+                        <div class="space-y-4">
+                            <div class="collapsible-container border rounded-md overflow-hidden">
+                                <button
+                                    class="collapsible-trigger w-full flex justify-between items-center p-4 bg-gray-100 hover:bg-gray-200 text-left font-semibold text-gray-700">
+                                    <span>Campaign Manager 360 (CM360) - Ene/Feb 2025</span>
+                                    <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                                </button>
+                                <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                    <p><strong>Nuevas Integraciones:</strong> Lanzamiento de integraciones con Adobe,
+                                        Google Ads, Netflix y The Trade Desk para simplificar la activación de campañas.
+                                    </p>
+                                    <p><strong>Cross Media Reach:</strong> Expansión de insights de medición de alcance
+                                        con esta nueva funcionalidad.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
-                                <span>Universal Analytics (UA) (Lanzado en 2012)</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
-                            <div class="collapse-content p-3 border-t bg-white">
-                                <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Contexto: Medición web centrada en escritorio, sesiones independientes y
-                                        cookies.</li>
-                                    <li>Tecnología: Biblioteca Javascript <code>analytics.js</code>.</li>
-                                    <li>Capacidades: Comprensión del usuario multidispositivo, rendimiento de apps
-                                        móviles, generación de leads y ROI.</li>
-                                </ul>
+                            <div class="collapsible-container border rounded-md overflow-hidden">
+                                <button
+                                    class="collapsible-trigger w-full flex justify-between items-center p-4 bg-gray-100 hover:bg-gray-200 text-left font-semibold text-gray-700">
+                                    <span>Ads Creative Studio (ACS) - Ene/Feb 2025</span>
+                                    <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                                </button>
+                                <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                    <p><strong>Deprecación Anunciada:</strong> ACS será oficialmente deprecado el 26 de
+                                        Marzo de 2025.</p>
+                                    <p><strong>Restricciones:</strong> Desde el 17 de Enero de 2025, se impide la
+                                        creación de nuevos proyectos (incluyendo duplicación). Uso limitado a proyectos
+                                        y campañas existentes.</p>
+                                    <p><strong>Acción Requerida:</strong> Guardar copias de los activos de ACS
+                                        externamente antes de la fecha de deprecación.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
-                                <span>Google Analytics 4 (GA4) (Anunciado en Octubre 2020)</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
-                            <div class="collapse-content p-3 border-t bg-white">
-                                <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Rol: Sucesor de Universal Analytics.</li>
-                                    <li>Tecnología: Biblioteca Javascript <code>gtm.js</code> (generalmente vía Google
-                                        Tag Manager).</li>
-                                    <li>Paradigma: Foco en el comportamiento del usuario y modelo basado en eventos.
-                                    </li>
-                                    <li>Características Clave: Multiplataforma, opera sin dependencia exclusiva de
-                                        cookies, privacidad central, medición entre dispositivos.</li>
-                                </ul>
+                            <div class="collapsible-container border rounded-md overflow-hidden">
+                                <button
+                                    class="collapsible-trigger w-full flex justify-between items-center p-4 bg-gray-100 hover:bg-gray-200 text-left font-semibold text-gray-700">
+                                    <span>Display & Video 360 (DV360) - Ene/Feb 2025</span>
+                                    <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                                </button>
+                                <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                    <p><strong>Deprecación de Funcionalidades (Q1 2025):</strong> Con la deprecación de
+                                        ACS, DV360 también discontinuará Data Driven Creatives, Audio Mixer, y
+                                        Customizable Audio Mixer (Dynamic Audio Beta).</p>
+                                    <p><strong>Fechas Clave:</strong> Desde el 26 de Febrero de 2025, no se podrán crear
+                                        nuevas creatividades con estos formatos. El 26 de Marzo de 2025, las
+                                        creatividades activas que usen estos formatos dejarán de servirse.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 text-left font-medium">
-                                <span>Transición Obligatoria a GA4 (Completada en 2023)</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
-                            <div class="collapse-content p-3 border-t bg-white">
-                                <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
-                                    <li>Cese de UA: Propiedades estándar dejaron de procesar datos el 1 de julio de
-                                        2023.</li>
-                                    <li>Cese de UA 360: Propiedades 360 dejaron de procesar datos el 1 de octubre de
-                                        2023.</li>
-                                    <li>Impacto: La migración a GA4 se volvió esencial para la continuidad de la
-                                        recolección de datos. El acceso a datos históricos de UA finalizó
-                                        aproximadamente 6 meses después del cese.</li>
-                                </ul>
+                            <div class="collapsible-container border rounded-md overflow-hidden">
+                                <button
+                                    class="collapsible-trigger w-full flex justify-between items-center p-4 bg-gray-100 hover:bg-gray-200 text-left font-semibold text-gray-700">
+                                    <span>Programa de Partners y Certificaciones - Ene/Feb 2025</span>
+                                    <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                                </button>
+                                <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                    <p><strong>Cambio de Nombre de Certificación:</strong> La certificación "Digital TV"
+                                        cambió a "Connected TV" en Enero de 2025.</p>
+                                    <p><strong>Revisión de Certificaciones 2025:</strong> A partir de Marzo de 2025, un
+                                        nuevo proceso automatizado y continuo de notificación de Recertificación
+                                        reemplazará la revisión manual anual. Se incluye un componente obligatorio de
+                                        conocimiento de privacidad (Certificación "Privacy for Agencies and Partners").
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="collapsible-container border rounded-md overflow-hidden">
+                                <button
+                                    class="collapsible-trigger w-full flex justify-between items-center p-4 bg-gray-100 hover:bg-gray-200 text-left font-semibold text-gray-700">
+                                    <span>Google Analytics (GA4) - Ene/Feb 2025</span>
+                                    <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                                </button>
+                                <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
+                                    <p><strong>Integración de Audiencias con Customer Match:</strong> Lanzada para
+                                        complementar audiencias de Analytics exportadas a productos publicitarios de
+                                        Google.</p>
+                                    <p><strong>Copia de Informes y Exploraciones entre Propiedades:</strong>
+                                        Funcionalidad lanzada para copiar configuraciones de informes y exploraciones
+                                        entre propiedades de GA4.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -769,163 +866,145 @@
                 </section>
                 <section id="seccion6" class="main-content-section mb-8 p-6 bg-white rounded-lg shadow-md hidden">
                     <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-mw-green">6. Novedades Clave de Google
-                        (Enero-Febrero 2025)</h2>
+                        (Mayo 2025)</h2>
+                    <p class="text-gray-600 mb-6">Resumen de las últimas actualizaciones de productos, industria,
+                        eventos y formación en Google Marketing Platform, extraído del "GMP Partner Insider" de Mayo de
+                        2025.</p>
                     <div class="space-y-6">
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
+
+                        <!-- Category: Google Analytics (GA4) -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
                                 class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
-                                <span>6.1 Campaign Manager 360 (CM360)</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                <span>6.1 Google Analytics (GA4)</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p><strong>Nuevas Integraciones:</strong> Se lanzaron integraciones con Adobe, Google
-                                    Ads, Netflix y The Trade Desk para simplificar la activación de campañas.</p>
-                                <p><strong>Cross Media Reach:</strong> Expansión de las métricas de alcance con el
-                                    lanzamiento de Cross Media Reach para una visión unificada del alcance de campañas
-                                    en video digital y TV lineal.</p>
-                                <p><strong>Integración con The Trade Desk:</strong> Nueva integración de trafficking
-                                    para compartir etiquetas de anuncios de CM360 de forma fluida, ahorrando tiempo en
-                                    la configuración de campañas.</p>
-                                <p><strong>Expansión de Integración con Google Ads:</strong> Ahora soporta tipos de
-                                    video adicionales no multiformato como Skippable In-Stream Ads, Bumper Ads y
-                                    Non-Skippable In-Stream Ads, simplificando la aplicación de trackers de CM360.</p>
-                                <p class="text-xs text-gray-500"><em>Fuentes: GMP Academy, Blog CM360.</em></p>
-                            </div>
-                        </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
-                                <span>6.2 Ads Creative Studio (ACS)</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
-                            <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p><strong>Deprecación Anunciada:</strong> ACS será deprecado el 26 de Marzo de 2025
-                                    debido a baja adopción.</p>
-                                <p><strong>Acciones Inmediatas (desde Ene 2025):</strong> Ya no es posible crear nuevos
-                                    proyectos en ACS (ni por duplicación). Solo se debe usar para campañas y proyectos
-                                    existentes.</p>
-                                <p><strong>Próximos Pasos:</strong> Los usuarios deben descargar todos sus activos de
-                                    ACS a almacenamiento local antes de la fecha de deprecación, ya que no estarán
-                                    disponibles después. Migrar completamente a soluciones alternativas.</p>
-                                <p><strong>Alternativas Recomendadas:</strong></p>
-                                <ul class="list-disc list-inside ml-4">
-                                    <li><strong>Display:</strong> Studio (con HTML5 SDK o Google Web Designer),
-                                        creatividades dinámicas.</li>
-                                    <li><strong>Video:</strong> Continuar trabajando con Creative Partners certificados
-                                        para personalización de campañas de video en YouTube.</li>
+                                <p><strong>Anotaciones de Usuario (User Annotations):</strong> Funcionalidad lanzada que
+                                    permite a los clientes añadir notas directamente a los informes para puntos de datos
+                                    específicos, proporcionando contexto y marcando hitos o cambios importantes. Debería
+                                    estar disponible para todos (Despliegue finalizado a fines de Marzo 2025).</p>
+                                <p><strong>Nuevas Plantillas de Instantáneas de Informes (Report Snapshot
+                                        Templates):</strong> Se han introducido plantillas para facilitar el monitoreo
+                                    de datos, haciéndolo más atractivo y visual. Incluyen plantillas para eCommerce y
+                                    Marketing, mejorando la personalización y rapidez para visualizar los datos más
+                                    relevantes.</p>
+                                <p><strong>Expansión de Filtros por Tipo de Concordancia:</strong> Mayor flexibilidad y
+                                    control en la sección "Explorar" para analizar datos. Incluye la habilidad de
+                                    aplicar todos los tipos de concordancia a filtros de dimensión a nivel de ítem y
+                                    usar "coincidencia exacta", "contiene", "empieza con", "termina con" y "coincide con
+                                    regex" en dimensiones de Audiencia en Exploraciones. (Primera fase lanzada,
+                                    disponible para todos a fines de Marzo 2025).</p>
+                                <p><strong>Mejoras en Atribución de Datos e Insights:</strong></p>
+                                <ul class="list-disc list-inside ml-4 space-y-1">
+                                    <li>Nuevos diagnósticos en la UI para identificar y ayudar a resolver errores de
+                                        implementación (ej., alta tasa de eventos <code>session_start</code> faltantes o
+                                        valores <code>(not set)</code>).</li>
+                                    <li>"Identificadores Agregados" (Aggregate Identifiers) para mantener la precisión
+                                        de los informes y mitigar la mala atribución de canales pagados de Google a
+                                        Orgánico, junto con la nueva etiqueta "(data not available)" para mejorar la
+                                        claridad de los datos y abordar la sobre-atribución al canal Directo, han sido
+                                        lanzados para propiedades alfa y ahora están disponibles para el 1% de las
+                                        propiedades de GA, con un despliegue completo proyectado para Mayo 2025.</li>
+                                    <li>La etiqueta "(data not available)" está activa para mitigar la mala atribución a
+                                        Directo, acompañada de anotaciones generadas por el sistema.</li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
-                                class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
-                                <span>6.3 Display & Video 360 (DV360)</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
-                            <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p><strong>Deprecación de Funcionalidades (Q1 2025):</strong> Debido a la deprecación de
-                                    ACS y bajo uso, se discontinuarán:</p>
-                                <ul class="list-disc list-inside ml-4">
-                                    <li>Data Driven Creatives (DDC)</li>
-                                    <li>Audio Mixer</li>
-                                    <li>Customizable Audio Mixer (Dynamic Audio Beta)</li>
+                                <p><strong>Próximos Pasos Críticos (Q2/Q3 2025):</strong></p>
+                                <ul class="list-disc list-inside ml-4 space-y-1">
+                                    <li>Finalización de lanzamientos clave para mejorar la calidad de datos: ampliación
+                                        de informes intradía en SA360 (Mayo), reclasificación del tráfico de YouTube de
+                                        DV360 como Video de Pago (Julio), e introducción de un diagnóstico proactivo de
+                                        calidad de datos para IDs de Usuario.</li>
+                                    <li>Mejora de la precisión de conversiones: Se corregirá en las próximas semanas el
+                                        doble conteo de conversiones en la sección de Publicidad (debido a diferentes
+                                        estados de consentimiento del usuario final). Habrá una anotación del sistema en
+                                        las propiedades afectadas.</li>
                                 </ul>
-                                <p><strong>Impacto (desde 26 Feb 2025):</strong> No se podrán crear nuevas creatividades
-                                    usando estos formatos.</p>
-                                <p><strong>Acción Necesaria:</strong> Clientes usando estos formatos deben planificar su
-                                    transición. Las creatividades activas que los usen dejarán de servirse el 26 de
-                                    Marzo de 2025.</p>
+                                <p><strong>Fortalecimiento de la Infraestructura de Google Analytics:</strong> Es una
+                                    prioridad de ingeniería para asegurar escalabilidad a largo plazo, enfocándose en
+                                    mejorar la frescura de los datos y una arquitectura subyacente simplificada
+                                    (despliegue para la segunda mitad de 2025 o principios de 2026).</p>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
+
+                        <!-- Category: Search Ads 360 -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
                                 class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
-                                <span>6.4 Google Analytics (GA4)</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                <span>6.2 Search Ads 360 (SA360)</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p><strong>Integración de Audiencias con Customer Match:</strong> Permite usar datos
-                                    propios (con consentimiento) para complementar audiencias de Analytics exportadas a
-                                    productos publicitarios de Google (Google Ads, DV360, SA360), aumentando la
-                                    audiencia direccionable cuando otros identificadores no están disponibles.</p>
-                                <p><strong>Copia de Informes y Exploraciones entre Propiedades:</strong> Nueva
-                                    funcionalidad para copiar la configuración de informes detallados personalizados o
-                                    exploraciones de una propiedad a otras, ahorrando tiempo y asegurando consistencia.
-                                </p>
-                                <p><strong>Roadmap de GA Actualizado:</strong> Ya está disponible una versión renovada
-                                    del Roadmap de Google Analytics en el EMP Portal, con visión de futuro, mejoras en
-                                    calidad de datos y nuevas funcionalidades.</p>
-                                <p><strong>Nuevo Pitch Deck de Audiencias de GA:</strong> Disponible para Partners y
-                                    Clientes (bajo NDA) para demostrar el valor de las audiencias de GA y cómo Customer
-                                    Match puede mejorar resultados (ej. +5.3% de uplift en conversiones con Smart
-                                    Bidding).</p>
-                                <p><strong>Piloto: Integración con reCAPTCHA (Confidencial):</strong> Programa piloto
-                                    para integrar reCAPTCHA con GA y obtener visibilidad directa sobre tráfico de
-                                    bots/spam, mejorar el seguimiento de conversiones y la seguridad del sitio.
-                                    (Formulario de interés disponible para Partners).</p>
-                                <p class="text-xs text-gray-500"><em>Fuentes: Help Center Analytics, Developer Guides,
-                                        EMP Portal.</em></p>
+                                <p><strong>Soporte en Estrategias de Puja de Presupuesto para Campañas de Shopping con
+                                        Pujas en Tiempo de Subasta de Google Ads:</strong> SA360 ahora soporta las pujas
+                                    en tiempo de subasta de Google Ads para campañas de Google Shopping dentro de las
+                                    Estrategias de Puja de Presupuesto (Valor de conversión máximo). Esta actualización
+                                    busca mejorar el rendimiento de las pujas.</p>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
+
+                        <!-- Category: Campaign Manager 360 -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
                                 class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
-                                <span>6.5 Search Ads 360 (SA360)</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                <span>6.3 Campaign Manager 360 (CM360)</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p><strong>Recomendación de Bidding con IA:</strong> SA360 ahora recomendará
-                                    oportunidades para actualizar campañas de Google Ads a estrategias de puja de SA360,
-                                    identificando campañas que no están en un portfolio y sugiriendo moverlas para
-                                    mejorar rendimiento y precisión.</p>
-                                <p><strong>Tasa de Conversión Personalizada en Forecasting:</strong> Se añade la opción
-                                    de ingresar una Tasa de Conversión Personalizada (CVR) en la previsión de planes de
-                                    SA360, permitiendo a los clientes usar su expertise para obtener previsiones más
-                                    precisas.</p>
+                                <p><strong>Segmentación Global por Código ZIP y Postal:</strong> A partir del 12 de Mayo
+                                    de 2025, los usuarios de CM360 pueden segmentar campañas por códigos postales a
+                                    nivel global. Anteriormente, esta segmentación solo estaba disponible para EE. UU. y
+                                    Canadá. Ahora es posible vía la UI de CM360 (a nivel de anuncio y plantillas de
+                                    segmentación), API y SDF.</p>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
+
+                        <!-- Category: Soluciones Tecnológicas Avanzadas -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
                                 class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
-                                <span>6.6 Programa de Partners de Google Marketing Platform</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                <span>6.4 Soluciones Tecnológicas Avanzadas (EMP)</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p><strong>Cambio de Nombre de Certificación:</strong> La certificación "Digital TV"
-                                    cambió su nombre a "Connected TV" en Enero de 2025 para reflejar mejor su enfoque.
-                                    No hay cambios en logo o requisitos.</p>
-                                <p><strong>Revisión de Certificaciones 2025 (Actualizado):</strong></p>
-                                <ul class="list-disc list-inside ml-4">
-                                    <li>A partir de Marzo 2025, un nuevo proceso de notificación de Recertificación
-                                        automatizado y continuo reemplazará la revisión manual anual.</li>
-                                    <li>Se incorpora un componente obligatorio de conocimiento de privacidad: todas las
-                                        empresas partner deben tener 5 individuos con la certificación "Privacy for
-                                        Agencies and Partners" anualmente.</li>
-                                    <li>Notificaciones por email se enviarán cuando el conteo de usuarios activos para
-                                        una certificación esté por debajo del mínimo en los próximos 30 días.</li>
-                                    <li>Mínimos: 5 usuarios certificados por certificación primaria/privacidad, 1 para
-                                        secundaria (Tag Manager).</li>
-                                    <li>Plazo de 90 días para actuar tras notificación inicial. Suspensión tras 30 días
-                                        de incumplimiento, y revocación/remoción del programa tras 60 días adicionales
-                                        en estado no conforme.</li>
-                                    <li>GMP Academy training disponible para entender los cambios.</li>
-                                </ul>
+                                <p><strong>Topic Mine:</strong> Solución tecnológica que utiliza datos de primera y/o
+                                    segunda parte para identificar temas en tendencia y usa Gemini para crear textos de
+                                    anuncios relevantes (títulos, descripciones, palabras clave) a partir de una lista
+                                    de productos, marcas o servicios.</p>
+                                <p><strong>Meridian:</strong> Solución de Marketing Mix Modeling (MMM) de código abierto
+                                    desarrollada por Google, que proporciona soluciones innovadoras a desafíos clave de
+                                    medición.</p>
+                                <p><strong>BackgroundR:</strong> Herramienta para crear fácilmente variaciones de fondos
+                                    de alta calidad para activos de imágenes en grandes cantidades.</p>
                             </div>
                         </div>
-                        <div class="collapsible-container border rounded-md overflow-hidden"> <button
+
+                        <!-- Category: Plataforma GMP y Programa de Partners -->
+                        <div class="collapsible-container border rounded-md overflow-hidden">
+                            <button
                                 class="collapsible-trigger w-full flex justify-between items-center p-4 bg-mw-green-light hover:bg-mw-green-lighter text-left font-semibold text-mw-green-darker">
-                                <span>6.7 Soluciones Avanzadas y Recursos para Partners</span> <span
-                                    class="collapsible-icon text-mw-green text-xl font-bold">+</span> </button>
+                                <span>6.5 Plataforma GMP y Programa de Partners</span>
+                                <span class="collapsible-icon text-mw-green text-xl font-bold">+</span>
+                            </button>
                             <div class="collapse-content p-4 border-t bg-white text-sm text-gray-700 space-y-3">
-                                <p><strong>Solución CopyCat:</strong> Utiliza IA (Gemini) para ayudar a los anunciantes
-                                    a generar copys de anuncios mejorados según el estilo de su marca. (Disponible en
-                                    Solution Library Page).</p>
-                                <p><strong>Solución Product Video Ads:</strong> Permite crear y escalar anuncios de
-                                    video integrando feeds de datos de productos para automatizar la creación, subida y
-                                    trafficking de videos a nivel de producto en Google Ads. (Disponible en Solution
-                                    Library Page).</p>
-                                <p><strong>Guía de Soluciones de Experiencias Inmersivas:</strong> Instrucciones paso a
-                                    paso sobre cómo crear experiencias inmersivas usando Google Maps Platform.
-                                    (Disponible en Solution Library Page).</p>
-                                <p><strong>Formación y Eventos:</strong></p>
-                                <ul class="list-disc list-inside ml-4">
-                                    <li>Sesión sobre "Mastering Demand Gen Experiments with Google Ads" (EMEA).</li>
-                                    <li>Recurso sobre "Demand Gen & PMax Measurement Support" en CM360, SA360, DV360 y
-                                        Google Ads.</li>
-                                    <li>Sesión exclusiva para Partners Certificados sobre "Google Analytics 4
-                                        Attribution Top of Mind".</li>
-                                    <li>Recordatorio para compartir la API de Google Marketing Platform, valiosa para
-                                        agencias y organizaciones que gestionan numerosas cuentas.</li>
-                                </ul>
-                                <p class="text-xs text-gray-500"><em>Fuente: Enterprise Marketing Portal.</em></p>
+                                <p><strong>Actualización del Menú de Servicios:</strong> El Menú de Servicios ha sido
+                                    actualizado para reflejar las necesidades del mercado y potenciar a los Partners en
+                                    el mundo impulsado por IA. Presenta un enfoque centrado en IA, optimizando 11
+                                    servicios anteriores en 3 "AI for Marketing Pathways" para mayor claridad y
+                                    expandiendo la cobertura de las ofertas de Google alineadas con las etapas de
+                                    madurez de IA y los objetivos de marketing de los anunciantes.</p>
+                                <p><strong>Nueva Página - IA para Marketing:</strong> Una nueva página para ayudar a
+                                    descubrir herramientas, productos y recursos para aprovechar el marketing impulsado
+                                    por IA.</p>
+                                <p><strong>Nueva Página - Creative Mastery:</strong> Página para descubrir qué funciona
+                                    mejor en diferentes formatos y campañas, aprender a optimizar el enfoque creativo
+                                    para máximo impacto en Google y aprovechar el conjunto de herramientas de IA y
+                                    soluciones técnicas de Google.</p>
+                                <p><strong>Nueva Página - Roadmaps de Google Marketing Platform:</strong> Un lugar
+                                    centralizado para explorar los últimos roadmaps y planes estratégicos para los
+                                    productos de Google Marketing Platform.</p>
+                                <p><strong>Recertificación Continua:</strong> El proceso de recertificación continua
+                                    está pausado hasta Junio de 2025.</p>
                             </div>
                         </div>
                     </div>
@@ -1002,7 +1081,7 @@
             // Scroll to the shown section
             const targetElement = document.getElementById(sectionIdToShow);
             if (targetElement) {
-                setTimeout(() => targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0);
+                setTimeout(() => targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50); // Added small delay for smoother scroll after content visibility change
             }
         }
 
@@ -1043,8 +1122,8 @@
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
                 showMainSection(targetId);
-                // Ensure download section is hidden when navigating away from generator output
-                if (targetId !== 'seccion1' && downloadSection) { // seccion1 is now generator
+                // Ensure download section is hidden when navigating away from generator output (seccion1)
+                if (targetId !== 'seccion1' && downloadSection) {
                     downloadSection.classList.add('hidden');
                     if (downloadInstructionsDiv) downloadInstructionsDiv.classList.add('hidden');
                 }
@@ -1054,20 +1133,6 @@
         // --- Initial State ---
         document.addEventListener('DOMContentLoaded', () => {
             showMainSection('seccion1'); // Show generator (new seccion1) by default
-            // Ensure sub-collapsibles within initially hidden sections are properly closed if not marked 'open'
-            mainContentSections.forEach(section => {
-                if (section.id !== 'seccion1') {
-                    section.querySelectorAll('.collapsible-container').forEach(container => {
-                        const content = container.querySelector('.collapse-content');
-                        const icon = container.querySelector('.collapsible-trigger .collapsible-icon');
-                        if (content && !content.classList.contains('open')) {
-                            content.classList.remove('open');
-                            if (icon) icon.textContent = '+';
-                            container.classList.remove('border-mw-green', 'border-2');
-                        }
-                    });
-                }
-            });
         });
 
 
@@ -1075,6 +1140,8 @@
         const generateBtn = document.getElementById('generate-btn');
         const outputDiv = document.getElementById('output-documentation');
         const downloadSection = document.getElementById('seccion7');
+        const downloadInstructionsDiv = document.getElementById('download-instructions'); // Single declaration here
+
 
         function parseParameters(paramString) {
             const paramMap = new Map();
@@ -1406,22 +1473,24 @@ gtag('consent', 'update', {
         // --- Download Documentation Button Logic ---
         const downloadPdfBtn = document.getElementById('download-pdf-btn');
         const copyTextBtn = document.getElementById('copy-text-btn');
-        const downloadInstructionsDiv = document.getElementById('download-instructions');
+        // const downloadInstructionsDiv = document.getElementById('download-instructions'); // This line was the duplicate and is removed. The one below is kept.
 
         if (downloadPdfBtn) {
+            const downloadInstructionsDiv = document.getElementById('download-instructions'); // Correct single declaration
             downloadPdfBtn.addEventListener('click', () => {
                 const guideContent = document.getElementById('output-documentation').innerHTML;
                 if (guideContent.includes("Guía de Marcación Personalizada")) {
                     if (downloadInstructionsDiv) downloadInstructionsDiv.classList.remove('hidden');
                     alert("Simulación de descarga PDF de la Guía:\n\nPara guardar la guía generada como PDF, usa la función 'Imprimir' de tu navegador (Ctrl+P o Cmd+P) y selecciona 'Guardar como PDF' como destino. Asegúrate de que solo la guía esté visible o selecciona las páginas correspondientes si es necesario.");
                 } else {
-                    alert("Por favor, primero genera la Guía de Marcación en la Sección 1."); // Updated section number
+                    alert("Por favor, primero genera la Guía de Marcación en la Sección 1.");
                     if (downloadInstructionsDiv) downloadInstructionsDiv.classList.add('hidden');
                 }
             });
         }
 
         if (copyTextBtn) {
+            const downloadInstructionsDiv = document.getElementById('download-instructions'); // Correct single declaration
             copyTextBtn.addEventListener('click', () => {
                 const guideContentElement = document.getElementById('output-documentation');
                 const guideText = guideContentElement.innerText;
@@ -1438,7 +1507,7 @@ gtag('consent', 'update', {
                         alert("No se pudo copiar el texto automáticamente. Por favor, selecciona y copia manualmente el contenido de la guía.");
                     }
                 } else {
-                    alert("Por favor, primero genera la Guía de Marcación en la Sección 1 para poder copiar su contenido."); // Updated section number
+                    alert("Por favor, primero genera la Guía de Marcación en la Sección 1 para poder copiar su contenido.");
                     if (downloadInstructionsDiv) downloadInstructionsDiv.classList.add('hidden');
                 }
             });
